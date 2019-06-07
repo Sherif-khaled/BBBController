@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<recording>
+  <id>a64da70a905aca17c23b26e027ce44e358ad2a48-1558872460749</id>
+  <state>published</state>
+  <published>true</published>
+  <start_time>1558872460749</start_time>
+  <end_time>1558872555770</end_time>
+  <participants>1</participants>
+  <meeting id="a64da70a905aca17c23b26e027ce44e358ad2a48-1558872460749" externalId="6e99aba8ffce8d5d55c2effcc2f45c644a4d3a31-10-275[30]" name="&#x627;&#x644;&#x62D;&#x635;&#x629; &#x627;&#x644;&#x631;&#x627;&#x628;&#x639;&#x629; &#x648;  &#x627;&#x644;&#x639;&#x634;&#x631;&#x64A;&#x646; (male)" breakout="false"/>
+  <meta>
+    <bbb-origin-server-common-name/>
+    <bbb-origin-version>3.6.1+ (Build: 20181220)</bbb-origin-version>
+    <bbb-origin-server-name>fajr.com</bbb-origin-server-name>
+    <meetingName>&#x627;&#x644;&#x62D;&#x635;&#x629; &#x627;&#x644;&#x631;&#x627;&#x628;&#x639;&#x629; &#x648;  &#x627;&#x644;&#x639;&#x634;&#x631;&#x64A;&#x646; (male)</meetingName>
+    <bbb-recording-name>&#x627;&#x644;&#x62D;&#x635;&#x629; &#x627;&#x644;&#x631;&#x627;&#x628;&#x639;&#x629; &#x648;  &#x627;&#x644;&#x639;&#x634;&#x631;&#x64A;&#x646; (male)</bbb-recording-name>
+    <bbb-origin-tag>moodle-mod_bigbluebuttonbn (2017101018)</bbb-origin-tag>
+    <bbb-context>&#x627;&#x644;&#x645;&#x633;&#x62A;&#x648;&#x649; &#x627;&#x644;&#x62B;&#x627;&#x645;&#x646; - &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629; &#x627;&#x644;&#x641;&#x635;&#x62D;&#x649;</bbb-context>
+    <bbb-origin>Moodle</bbb-origin>
+    <meetingId>6e99aba8ffce8d5d55c2effcc2f45c644a4d3a31-10-275[30]</meetingId>
+    <bbb-recording-description/>
+    <isBreakout>false</isBreakout>
+    <bbb-recording-tags/>
+    <bn-recording-ready-url>http://fajr.com/fajr-online/mod/bigbluebuttonbn/bbb_broker.php?action=recording_ready&amp;bigbluebuttonbn=275</bn-recording-ready-url>
+  </meta>
+  <playback>
+    <format>presentation</format>
+    <link>https://bbb.fajr.com/playback/presentation/2.0/playback.html?meetingId=a64da70a905aca17c23b26e027ce44e358ad2a48-1558872460749</link>
+    <processing_time>8600</processing_time>
+    <duration>20566</duration>
+    <extensions>
+      <preview>
+        <images>
+          <image width="176" height="136" alt="">https://bbb.fajr.com/presentation/a64da70a905aca17c23b26e027ce44e358ad2a48-1558872460749/presentation/d2d9a672040fbde2a47a10bf6c37b6a4b5ae187f-1558872460779/thumbnails/thumb-1.png</image>
+        </images>
+      </preview>
+    </extensions>
+    <size>417848</size>
+  </playback>
+  <raw_size>735391</raw_size>
+</recording>
