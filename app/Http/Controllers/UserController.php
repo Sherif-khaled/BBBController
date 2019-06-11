@@ -1,7 +1,9 @@
 <?php
 
 namespace BBBController\Http\Controllers;
+use BBBController\Http\Requests\UserRequest;
 use BBBController\User;
+use http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -31,15 +33,20 @@ class UserController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-    public function store(){
+    public function store(UserRequest $request){
 
-         User::create([
+        $check = User::create([
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'password' => Hash::make($_POST['password']),
         ]);
 
-         return redirect('/users');
+        $notification = array(
+            'message' => 'User created successfully!',
+            'alert-type' => 'success'
+        );
+
+        return ;
 
     }
 }

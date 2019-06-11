@@ -15,18 +15,20 @@
                         <i class="fas fa-user prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="name">Full Name</label>
                         <input type="text" name="name" id="name" placeholder="Mohammd" class="form-control validate">
+                        <div class="error text-danger">{{ $errors->first('name') }}</div>
                     </div>
                     <div class="md-form mb-5">
                         <i class="fas fa-envelope prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="email">Email</label>
                         <input type="email" name="email" id="email" placeholder="mohamed@example.com" class="form-control validate">
+                        <div class="error text-danger">{{ $errors->first('email') }}</div>
                     </div>
 
                     <div class="md-form mb-4">
                         <i class="fas fa-lock prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="password">password</label>
                         <input type="password" name="password" id="password" class="form-control validate">
-
+                        <div class="error text-danger">{{ $errors->first('password') }}</div>
                     </div>
 
                 </div>

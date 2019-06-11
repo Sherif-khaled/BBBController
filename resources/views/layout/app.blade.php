@@ -14,6 +14,9 @@
     <link href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <!-- Argon CSS -->
     <link type="text/css" href="./assets/css/argon.css?v=1.0.0" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+
 </head>
 <body>
 
@@ -107,7 +110,6 @@
 
 </div>
 
-
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
@@ -115,7 +117,10 @@
 <!-- Optional JS -->
 <script src="./assets/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="./assets/vendor/chart.js/dist/Chart.extension.js"></script>
-<!-- Argon JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+
+        <!-- Argon JS -->
 <script src="./assets/js/argon.js?v=1.0.0"></script>
     @yield('script')
     <script type="text/javascript">

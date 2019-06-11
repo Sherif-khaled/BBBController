@@ -26,7 +26,7 @@ Route::group(['middleware' => ['dConfig']], function () {
 
     Route::get('/users','UserController@show')->name('user.show');
     Route::get('/create','UserController@create')->name('user.create');
-    Route::post('/users','UserController@store')->name('user.store');
+    Route::post('/create','UserController@store')->name('user.store');
 
 
     Route::get('/home', 'HomeController@index')->name('home');

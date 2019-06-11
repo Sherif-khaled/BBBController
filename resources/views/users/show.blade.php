@@ -4,7 +4,12 @@
 
 @section('content')
 
-    <a href="{{route('user.create')}}" class="btn btn-primary" style="margin-bottom: 20px;color: white">Create User</a>
+<a href=""  class="btn btn-default mb-4" data-toggle="modal" data-target="#modalCreateForm">Create</a>
+
+<form id="create_user" method="POST" action="{{route('user.store')}}">
+    @csrf
+    @include('users.models.create_user')
+</form>
 
 <div class="table-responsive">
 
@@ -33,4 +38,8 @@
         </tbody>
     </table>
 </div>
+@endsection
+
+@section('script')
+
 @endsection
