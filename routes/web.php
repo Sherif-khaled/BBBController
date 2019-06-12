@@ -24,9 +24,17 @@ Route::group(['middleware' => ['dConfig']], function () {
 
     Auth::routes();
 
-    Route::get('/users','UserController@show')->name('user.show');
-    Route::get('/create','UserController@create')->name('user.create');
-    Route::post('/create','UserController@store')->name('user.store');
+    Route::group(['prefix' => 'users'], function () {
+
+        Route::get('/', 'UserController@index')->name('index');
+        Route::match(['get', 'post'], 'create', 'UserController@create')->name('create');
+//        Route::match(['get', 'put'], 'update/{id}', 'Crud5Controller@update');
+//        Route::delete('delete/{id}', 'Crud5Controller@delete');
+    });
+
+//    Route::get('/users','UserController@show')->name('user.show');
+//    Route::get('/create','UserController@create')->name('user.create');
+//    Route::post('users','UserController@store')->name('user.store');
 
 
     Route::get('/home', 'HomeController@index')->name('home');

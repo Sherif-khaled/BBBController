@@ -5,9 +5,10 @@
 @section('content')
 
 <a href=""  class="btn btn-default mb-4" data-toggle="modal" data-target="#modalCreateForm">Create</a>
-
-<form id="create_user" method="POST" action="{{route('user.store')}}">
+{{--method="POST" action="{{route('user.store')}}"--}}
+<form id="create_user" name="create_user">
     @csrf
+    @method('post')
     @include('users.models.create_user')
 </form>
 
@@ -41,5 +42,7 @@
 @endsection
 
 @section('script')
+
+
 
 @endsection

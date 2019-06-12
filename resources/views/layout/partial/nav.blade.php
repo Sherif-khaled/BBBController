@@ -70,7 +70,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.show')}}">
+                    <a class="nav-link" href="{{url('/users')}}">
                         <i class="ni ni-single-02 text-yellow"></i>Users
                     </a>
                 </li>
