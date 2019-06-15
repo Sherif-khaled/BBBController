@@ -1,38 +1,101 @@
 <?php
 
 namespace BBBController\Http\Controllers;
-use BBBController\Http\Requests\UserRequest;
-use BBBController\User;
-use Response;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
+use BBBController\User;
+use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 class UserController extends Controller
 {
-
-
-    public function index(){
-
-        $users = User::all();
-
-        return view('users.show',compact('users'));
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('users.show');
     }
-    public function create(UserRequest $request){
+    public function getUsers(Request $request){
+        $columns= ['id', 'name', 'email'];
+        $users = User::select($columns);
 
-        User::create([
-            'name' => $_POST['name'],
-            'email' => $_POST['email'],
-            'password' => Hash::make($_POST['password']),
-        ]);
+        $datatable = Datatables::of($users)->addColumn('action', function($row){
 
-        $notification = array(
-            'message' => 'User created successfully!',
-            'alert-type' => 'success'
-        );
+            $btn = '<a href="javascript:void(0)" data-toggle="modal"  data-target="#modal_form" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct">Edit</a>';
 
-        return response()->json($notification);
+            $btn = $btn.' <a href="javascript:void(0)" data-toggle="modal" data-target="#confirm_modal"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteProduct">Delete</a>';
 
+            return $btn;
+        })
+            ->rawColumns(['action'])
+            ->make(true);
+        return $datatable;
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

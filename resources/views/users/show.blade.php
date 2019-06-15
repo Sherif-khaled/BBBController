@@ -4,45 +4,37 @@
 
 @section('content')
 
-<a href=""  class="btn btn-default mb-4" data-toggle="modal" data-target="#modalCreateForm">Create</a>
-{{--method="POST" action="{{route('user.store')}}"--}}
 <form id="create_user" name="create_user">
     @csrf
-    @method('post')
     @include('users.models.create_user')
 </form>
 
 <div class="table-responsive">
+    <a  href=""  class="btn btn-default mb-4" data-toggle="modal" data-target="#modalCreateForm">Create</a>
 
-    <table class="table table-striped">
+    <table id="users_table" class="table table-striped">
         <thead class="table-dark">
-        <th>#</th>
+        <th>id</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Role</th>
-        <th>Actions</th>
+{{--        <th>Role</th>--}}
+        <th>Action</th>
         </thead>
-        <tbody>
-        @foreach($users as $user)
-            <tr>
-                <td>{{$user->id}}</td>
-                <td>{{$user->name}}</td>
-                <td>{{$user->email}}</td>
-                <td>test</td>
-                <td>
-                    <a href="" class="btn btn-info">Profile</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+{{--        <tbody>--}}
+{{--        @foreach($users as $user)--}}
+{{--            <tr>--}}
+{{--                <td>{{$user->id}}</td>--}}
+{{--                <td>{{$user->name}}</td>--}}
+{{--                <td>{{$user->email}}</td>--}}
+{{--                <td>test</td>--}}
+{{--                <td>--}}
+{{--                    <a href="" class="btn btn-info">Profile</a>--}}
+{{--                    <a href="" class="btn btn-danger">Delete</a>--}}
 
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
+{{--                </td>--}}
+{{--            </tr>--}}
+{{--        @endforeach--}}
+{{--        </tbody>--}}
     </table>
 </div>
-@endsection
-
-@section('script')
-
-
-
 @endsection

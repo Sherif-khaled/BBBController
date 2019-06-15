@@ -24,13 +24,16 @@ Route::group(['middleware' => ['dConfig']], function () {
 
     Auth::routes();
 
-    Route::group(['prefix' => 'users'], function () {
+    Route::get('/getusers','UserController@getUsers')->name('users.getusers');
+    Route::resource('users','UserController');
 
-        Route::get('/', 'UserController@index')->name('index');
-        Route::match(['get', 'post'], 'create', 'UserController@create')->name('create');
-//        Route::match(['get', 'put'], 'update/{id}', 'Crud5Controller@update');
-//        Route::delete('delete/{id}', 'Crud5Controller@delete');
-    });
+//    Route::group(['prefix' => 'users'], function () {
+//
+//        //Route::get('/', 'UserController@index')->name('index');
+//        //Route::match(['get', 'post'], 'create', 'UserController@create')->name('create');
+//        //        Route::match(['get', 'put'], 'update/{id}', 'Crud5Controller@update');
+////        Route::delete('delete/{id}', 'Crud5Controller@delete');
+//    });
 
 //    Route::get('/users','UserController@show')->name('user.show');
 //    Route::get('/create','UserController@create')->name('user.create');

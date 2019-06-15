@@ -2,6 +2,7 @@
 
 namespace BBBController\Providers;
 
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -15,6 +16,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
             Schema::defaultStringLength(191);
+
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(IdeHelperServiceProvider::class);
+        }
     }
 
     /**
