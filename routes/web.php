@@ -25,19 +25,9 @@ Route::group(['middleware' => ['dConfig']], function () {
     Auth::routes();
 
     Route::get('/getusers','UserController@getUsers')->name('users.getusers');
+    Route::get('/users/{id}/profile','UserController@profile')->name('users.profile');
+    Route::post('/checkemail','UserController@checkEmailExist')->name('users.checkEmailExist');
     Route::resource('users','UserController');
-
-//    Route::group(['prefix' => 'users'], function () {
-//
-//        //Route::get('/', 'UserController@index')->name('index');
-//        //Route::match(['get', 'post'], 'create', 'UserController@create')->name('create');
-//        //        Route::match(['get', 'put'], 'update/{id}', 'Crud5Controller@update');
-////        Route::delete('delete/{id}', 'Crud5Controller@delete');
-//    });
-
-//    Route::get('/users','UserController@show')->name('user.show');
-//    Route::get('/create','UserController@create')->name('user.create');
-//    Route::post('users','UserController@store')->name('user.store');
 
 
     Route::get('/home', 'HomeController@index')->name('home');

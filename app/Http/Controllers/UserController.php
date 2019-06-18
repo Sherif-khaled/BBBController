@@ -2,15 +2,19 @@
 
 namespace BBBController\Http\Controllers;
 
+use BBBController\Http\Requests\UserRequest;
 use BBBController\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
+use Session;
+
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Users.
      *
-     * @return \Illuminate\Http\Response
+     * @return datatable
      */
     public function index()
     {
@@ -21,10 +25,13 @@ class UserController extends Controller
         $users = User::select($columns);
 
         $datatable = Datatables::of($users)->addColumn('action', function($row){
+//data-toggle="modal" data-target="#detailsModal"
+            $btn = '<a href="javascript:void(0)" id="detailsUser"  data-id="'.$row->id.'" class="btn btn-info btn-md detailsUser">Details</a>';
 
-            $btn = '<a href="javascript:void(0)" data-toggle="modal"  data-target="#modal_form" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct">Edit</a>';
+            $btn = $btn.'<a href="javascript:void(0)" id="editUser" data-id="'.$row->id.'" class="btn btn-primary btn-md">Edit</a>';
 
-            $btn = $btn.' <a href="javascript:void(0)" data-toggle="modal" data-target="#confirm_modal"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteProduct">Delete</a>';
+            $btn = $btn.'<a href="javascript:void(0)" id="delUser" data-toggle="modal" data-target="#confirm_modal"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-md">Delete</a> ';
+
 
             return $btn;
         })
@@ -32,15 +39,10 @@ class UserController extends Controller
             ->make(true);
         return $datatable;
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function profile($id){
+        $user = User::where('id','=',$id)->first();
+        $country = User::find($id)->country()->first('name');
+        return response()->json(['user' => $user,'country' => $country]);
     }
 
     /**
@@ -51,18 +53,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $user_id = $request->user_id;
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        if($user_id == null){
+            $user = User::create([
+                'name' => $_POST['name'],
+                'email' => $_POST['email'],
+                'password' => Hash::make($_POST['password']),
+            ]);
+        }else{
+
+            $user = User::where('id','=',$user_id)->first(['id','name','email']);
+            $user->name = $_POST['name'];
+            $user->email = $_POST['email'];
+            $user->save();
+        }
+
+        return response()->json($user);
     }
 
     /**
@@ -73,19 +80,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $user = User::where('id' , '=', $id)->first(['id','name','email']);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return response()->json($user);
     }
 
     /**
@@ -96,6 +93,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+
+        return response()->json(['success'=>'User deleted successfully.']);
     }
+    public function checkEmailExist()
+    {
+        $user_mail = User::where('email', '=', $_POST['email'])->first();
+
+        return response()->json(['user' => $user_mail]);
+    }
+
 }

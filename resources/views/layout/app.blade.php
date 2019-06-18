@@ -17,17 +17,25 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
+    <!-- Datatable CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+{{--    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">--}}
+{{--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.semanticui.min.css">--}}
 
 
 
     <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Optional JS -->
-    <script src="./assets/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="./assets/vendor/chart.js/dist/Chart.extension.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <!-- Datatable JS -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Form Validation JS -->
+    <script src="./assets/vendor/form-validator/jquery.form-validator.min.js"></script>
+
 
     <script src="{{ asset('assets/js/users.js') }}"></script>
 
@@ -90,9 +98,9 @@
 
 
 
-
     <!-- Header -->
     <div class="header bg-gradient-primary" style="padding-bottom: 100px">
+
 
     </div>
 
@@ -101,14 +109,17 @@
     <!-- Page content -->
     <div class="container-fluid mb--50">
         <div class="row justify-content-center">
+@include('layout.alert')
+
+
             <div>
-                @if ($message = Session::get('success'))
+                @if (Session::has('message'))
 
                     <div class="alert alert-success alert-block">
 
                         <button type="button" class="close" data-dismiss="alert">×</button>
 
-                        <strong>{{ $message }}</strong>
+                        <strong>{{ Session::get("message") }}</strong>
 
                     </div>
 
@@ -124,52 +135,36 @@
         @include('layout.partial.footer')
 
 </div>
-
-
-
-
         <!-- Argon JS -->
 <script>
         src="./assets/js/argon.js?v=1.0.0"
 
 </script>
     @yield('script')
+
     <script type="text/javascript">
+        $.formUtils.loadModules('emailexist.dev', '/assets/js/');
+        $.validate();
 
-        $(document).ready(function () {
-
-            $('#detailsModal').on('show.bs.modal', function(e) {
-
-                var recordId = $(e.relatedTarget).data('record-id');
-
-                $("#test").text(recordId);
-            });
-        });
-
-        $('#confirmModal').on('show.bs.modal', function(c) {
-
-            $('#yesconfirm').click(function (e) {
-
-
-                    var meetingID = $(c.relatedTarget).data('meeting-id');
-                    $.ajax({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        url: "{{route('record.delete',"6e99aba8ffce8d5d55c2effcc2f45c644a4d3a31-10-275[30]")}}",
-                        type: 'POST',
-                        dataType: 'application/json',
-                        data: { 'meeting_id': meetingID},
-                        success: function (s) {
-                            alert(s.message);
-                        }
-                    });
+        toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-center",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "500",
+                "timeOut": "1500",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
 
 
-
-            })
-
-        });
 
     </script>
 

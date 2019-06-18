@@ -12,7 +12,7 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        Settings::insert([
+        Configuration::insert([
             ["company_name" => "X2hex"],
             ["company_activity" => "Software Industry"],
             ["company_logo" => ""],

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmodalLabel" aria-hidden="true">
+<div class="modal fade" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="confirmodalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -12,8 +12,8 @@
                 Are You Sure You Want Delete This Record?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="button" id="yesconfirm" class="btn btn-primary">Yes</button>
+                <button type="button" id="no_confirm" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" id="yes_confirm" class="btn btn-primary">Yes</button>
             </div>
         </div>
     </div>
