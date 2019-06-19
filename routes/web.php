@@ -16,18 +16,21 @@ Route::group(['middleware' => ['dConfig']], function () {
         return view('dashboard');
     })->name('dashboard')->middleware('auth');
 
+    Auth::routes();
 
+    Route::get('/getusers','UserController@getUsers')->name('users.getusers');
+    Route::post('/checkemail','UserController@checkEmailExist')->name('users.checkEmailExist');
+    Route::get('/users/{id}/details','UserController@details')->name('users.details');
+    Route::get('/users/{id}/profile','UserController@profile')->name('users.profile');
+    Route::resource('users','UserController');
 
 
     Route::get('/records','RecordController@show')->name('record.show')->middleware('auth');
     Route::post('/delete/{meeting_id}','RecordController@delete')->name('record.delete');
 
-    Auth::routes();
 
-    Route::get('/getusers','UserController@getUsers')->name('users.getusers');
-    Route::get('/users/{id}/profile','UserController@profile')->name('users.profile');
-    Route::post('/checkemail','UserController@checkEmailExist')->name('users.checkEmailExist');
-    Route::resource('users','UserController');
+
+
 
 
     Route::get('/home', 'HomeController@index')->name('home');

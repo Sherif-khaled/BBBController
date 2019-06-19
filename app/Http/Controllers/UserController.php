@@ -2,6 +2,7 @@
 
 namespace BBBController\Http\Controllers;
 
+use BBBController\Country;
 use BBBController\Http\Requests\UserRequest;
 use BBBController\User;
 use Illuminate\Http\Request;
@@ -40,9 +41,20 @@ class UserController extends Controller
         return $datatable;
     }
     public function profile($id){
+        $user = User::with('country')->where('id','=',$id)->first();
+        $countries = Country::all();
+
+        return view('users.profile',compact(['user','countries']));
+    }
+    public function details($id){
         $user = User::where('id','=',$id)->first();
         $country = User::find($id)->country()->first('name');
-        return response()->json(['user' => $user,'country' => $country]);
+        if(\request()->ajax()){
+            return response()->json(['user' => $user,'country' => $country]);
+        }
+        else{
+            return view('users.profile');
+        }
     }
 
     /**
@@ -66,6 +78,8 @@ class UserController extends Controller
             $user = User::where('id','=',$user_id)->first(['id','name','email']);
             $user->name = $_POST['name'];
             $user->email = $_POST['email'];
+            $user->gender = $_POST['gender'];
+            $user->country_id = $_POST['country'];
             $user->save();
         }
 

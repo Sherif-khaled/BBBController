@@ -8,25 +8,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Bigbluebutton Controller</title>
     <!-- Favicon -->
-    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+    <link href="{{asset('assets/img/brand/favicon.png')}}" rel="icon" type="image/png">
     <!-- Icons -->
-    <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-    <link href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
     <!-- Argon CSS -->
-    <link type="text/css" href="./assets/css/argon.css?v=1.0.0" rel="stylesheet">
+    <link type="text/css" href="{{asset('assets/css/argon.css?v=1.0.0')}}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
     <!-- Datatable CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-{{--    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">--}}
-{{--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.semanticui.min.css">--}}
 
 
-
-    <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
     <!-- Optional JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <!-- Datatable JS -->
@@ -34,7 +31,7 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
     <!-- Form Validation JS -->
-    <script src="./assets/vendor/form-validator/jquery.form-validator.min.js"></script>
+    <script src="{{asset('assets/vendor/form-validator/jquery.form-validator.min.js')}}"></script>
 
 
     <script src="{{ asset('assets/js/users.js') }}"></script>
@@ -61,7 +58,7 @@
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                <img alt="Image placeholder" src="{{asset('assets/img/theme/team-4-800x800.jpg')}}">
               </span>
                             <div class="media-body ml-2 d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
@@ -72,7 +69,7 @@
                         <div class=" dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Welcome!</h6>
                         </div>
-                        <a href="./examples/profile.html" class="dropdown-item">
+                        <a href="/users/{{auth()->id()}}/profile" class="dropdown-item">
                             <i class="ni ni-single-02"></i>
                             <span>My profile</span>
                         </a>
@@ -144,7 +141,10 @@
 
     <script type="text/javascript">
         $.formUtils.loadModules('emailexist.dev', '/assets/js/');
-        $.validate();
+
+        $.validate({
+            modules : 'security'
+        });
 
         toastr.options = {
                 "closeButton": true,

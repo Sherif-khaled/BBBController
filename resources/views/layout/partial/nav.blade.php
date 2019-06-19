@@ -7,7 +7,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="./index.html">
-            <img src="./assets/img/brand/blue.png" style="  height: 200px;
+            <img src="{{asset('assets/img/brand/blue.png')}}" style="  height: 200px;
   width: 50%;" class="navbar-brand-img" alt="...">
         </a>
 
@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="./index.html">
-                            <img src="./assets/img/brand/blue.png">
+                            <img src="{{asset('assets/img/brand/blue.png')}}">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">

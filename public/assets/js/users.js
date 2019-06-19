@@ -4,10 +4,7 @@ $(document).ready(function () {
  $('body').on('click','#detailsUser',function () {
      user_id = $(this).data('id');
      /* get user to edit form */
-     $.get('/users/' + user_id +'/profile', function (data) {
-         if(data.country.name === null){
-             alert('ddddddd');
-         }
+     $.get('/users/' + user_id +'/details', function (data) {
          $('#prof_name').html(data.user.name);
          $('#prof_email').html('<i class="fas fa-envelope"></i> ' + data.user.email);
          $('#prof_phone').html('<i class="fas fa-mobile-alt"></i> ' + data.user.phone);
@@ -96,6 +93,24 @@ $(document).ready(function () {
                 $('#modalUserForm').modal('hide');
                 $('#users_table').DataTable().destroy();
                 getUsers();
+            },
+            error:function (data) {
+
+            }
+        });
+    })
+
+
+    /* When click save changes on user profile */
+    $('#btn_save_profile').click(function (e) {
+        e.preventDefault();
+        $.validate();
+        $.ajax({
+            data: $('#frmProfile').serialize(),
+            type:'post',
+            url:'/users',
+            success:function (data) {
+                toastr["success"]("User updated successfully.", "success");
             },
             error:function (data) {
 
