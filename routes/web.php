@@ -22,6 +22,7 @@ Route::group(['middleware' => ['dConfig']], function () {
     Route::post('/checkemail','UserController@checkEmailExist')->name('users.checkEmailExist');
     Route::get('/users/{id}/details','UserController@details')->name('users.details');
     Route::get('/users/{id}/profile','UserController@profile')->name('users.profile');
+    Route::post('/changepassword','UserController@changePassword')->name('users.changepassword');
     Route::resource('users','UserController');
 
 

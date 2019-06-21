@@ -12,7 +12,7 @@ $.formUtils.addValidator({
                 'email' : email,
             },
             success: function(data){
-                email_value = data.user.email
+                email_value = data
             }
         });
         return value !== email_value;

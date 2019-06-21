@@ -5,10 +5,13 @@ namespace BBBController\Http\Controllers;
 use BBBController\Country;
 use BBBController\Http\Requests\UserRequest;
 use BBBController\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
 use Session;
+use Auth;
 
 class UserController extends Controller
 {
@@ -21,12 +24,12 @@ class UserController extends Controller
     {
         return view('users.show');
     }
-    public function getUsers(Request $request){
+    public function getUsers(){
         $columns= ['id', 'name', 'email'];
         $users = User::select($columns);
 
         $datatable = Datatables::of($users)->addColumn('action', function($row){
-//data-toggle="modal" data-target="#detailsModal"
+
             $btn = '<a href="javascript:void(0)" id="detailsUser"  data-id="'.$row->id.'" class="btn btn-info btn-md detailsUser">Details</a>';
 
             $btn = $btn.'<a href="javascript:void(0)" id="editUser" data-id="'.$row->id.'" class="btn btn-primary btn-md">Edit</a>';
@@ -41,15 +44,15 @@ class UserController extends Controller
         return $datatable;
     }
     public function profile($id){
-        $user = User::with('country')->where('id','=',$id)->first();
+        $user = User::where('id','=',$id)->first();
         $countries = Country::all();
-
-        return view('users.profile',compact(['user','countries']));
+        $gender = ['Male','Female','Other'];
+        return view('users.profile',compact(['user','countries','gender']));
     }
     public function details($id){
         $user = User::where('id','=',$id)->first();
         $country = User::find($id)->country()->first('name');
-        if(\request()->ajax()){
+        if(request()->ajax()){
             return response()->json(['user' => $user,'country' => $country]);
         }
         else{
@@ -67,23 +70,35 @@ class UserController extends Controller
     {
         $user_id = $request->user_id;
 
-        if($user_id == null){
-            $user = User::create([
-                'name' => $_POST['name'],
-                'email' => $_POST['email'],
-                'password' => Hash::make($_POST['password']),
-            ]);
-        }else{
+        try{
+            if($user_id == null){
+                 User::create([
+                    'name' => $_POST['name'],
+                    'email' => $_POST['email'],
+                    'password' => Hash::make($_POST['password']),
+                ]);
+            }
+            else{
+                $user = User::where('id','=',$user_id)->first();
+                $user->name = $_POST['name'];
+                $user->email = $_POST['email'];
+                if($request->has('profile')){
 
-            $user = User::where('id','=',$user_id)->first(['id','name','email']);
-            $user->name = $_POST['name'];
-            $user->email = $_POST['email'];
-            $user->gender = $_POST['gender'];
-            $user->country_id = $_POST['country'];
-            $user->save();
+                    $user->gender = $_POST['gender'];
+                    $user->country_id = $_POST['country'];
+                }
+
+                $user->save();
+            }
+        }catch (QueryException $e)
+        {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return response()->json('User Exist');
+            }
+            else{return response()->json($e->message());}
         }
-
-        return response()->json($user);
+            return response()->json(true);
     }
 
     /**
@@ -113,9 +128,35 @@ class UserController extends Controller
     }
     public function checkEmailExist()
     {
-        $user_mail = User::where('email', '=', $_POST['email'])->first();
+        $user_mail = User::where('email', '=', $_POST['email']);
 
-        return response()->json(['user' => $user_mail]);
+        if($user_mail->count() == 0){
+            return response()->json(true);
+
+        }
+
+        return response()->json(false);
+    }
+    public function changePassword(){
+        if(Auth::Check()){
+            $check = Hash::check(request('currentPassword'),Auth::User()->password);
+            if($check){
+                $user = User::find(Auth::User()->id);
+                $user->password = Hash::make($_POST['newPassword']);
+                $user->save();
+                return response()->json(['success' => 'THe password changed successfully.']);
+            }
+            else{
+                return response()->json(['unauthenticated' => 'Wrong current password' ]);
+            }
+
+        }
+        elseif (Auth::Check() == false){
+            return response()->json(['unauthenticated' => "You don't have authenticated to change the password" ]);
+        }
+        else{
+            return response()->json(['undefined' => "Undefined error"]);
+        }
     }
 
 }

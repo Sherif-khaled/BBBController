@@ -37,6 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public static function getGender(){
+        return $gender = ['Male','Female','Other'];
+    }
     public function country(){
         return $this->belongsTo(Country::class);
     }

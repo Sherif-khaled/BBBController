@@ -31,7 +31,11 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
     <!-- Form Validation JS -->
-    <script src="{{asset('assets/vendor/form-validator/jquery.form-validator.min.js')}}"></script>
+{{--    <script src="{{asset('assets/vendor/bootstrap-validator/validator.js')}}"></script>--}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+    <script src="{{asset('assets/js/validations.js')}}"></script>
+
 
 
     <script src="{{ asset('assets/js/users.js') }}"></script>
@@ -61,7 +65,7 @@
                 <img alt="Image placeholder" src="{{asset('assets/img/theme/team-4-800x800.jpg')}}">
               </span>
                             <div class="media-body ml-2 d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                                <span class="mb-0 text-sm  font-weight-bold">{{Auth::User()->name}}</span>
                             </div>
                         </div>
                     </a>
@@ -140,11 +144,6 @@
     @yield('script')
 
     <script type="text/javascript">
-        $.formUtils.loadModules('emailexist.dev', '/assets/js/');
-
-        $.validate({
-            modules : 'security'
-        });
 
         toastr.options = {
                 "closeButton": true,

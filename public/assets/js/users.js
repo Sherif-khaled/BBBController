@@ -1,5 +1,35 @@
 let pass_html
 $(document).ready(function () {
+    $('#frmChangePassword').submit(function (e) {
+        e.preventDefault();
+        if($(this).valid()){
+            $.ajax({
+                data:$(this).serialize(),
+                url:'/changepassword',
+                type:'post',
+                success:function (data) {
+                    if(data.hasOwnProperty('success')){
+                        toastr["success"](data.success, "success");
+                    }
+                    else if(data.hasOwnProperty('unauthenticated')){
+                        toastr["error"](data.unauthenticated, "Unauthenticated");
+                    }
+                    else{
+                        toastr["error"](data.undefined, "Undefined");
+                    }
+
+                }
+            });
+        }
+    });
+
+    $("#modalUserForm").on('hidden.bs.modal', function(){
+        $(this).find('form')[0].reset();
+        $("form").each(function(){
+            $(this).validate().resetForm();
+        });
+    });
+
 
  $('body').on('click','#detailsUser',function () {
      user_id = $(this).data('id');
@@ -14,12 +44,6 @@ $(document).ready(function () {
      $('#detailsModal').modal('show');
 
  });
-
-    $.validate({
-        modules : 'toggleDisabled',
-        disabledFormFilter : 'form.toggle-disabled',
-        showErrorDialogs : false
-    });
     getUsers();
 
     $.ajaxSetup({
@@ -48,10 +72,11 @@ $(document).ready(function () {
         $('#ModalUserTitle').html('Edit User');
         //reset the modal from any old data
         $('#frmUser').trigger('reset');
-        //get parent password div content to public variable
-        pass_html = $('#pass_block').html();
+
         //when modal show event
         $("#modalUserForm").on('show.bs.modal', function(){
+            //get parent password div content to public variable
+            pass_html = $('#pass_block').html();
             // if password element exist
             if($('#password').length > 0){
                 //remove all elements in pass_block div
@@ -60,6 +85,7 @@ $(document).ready(function () {
         });
         //show modal
         $('#modalUserForm').modal('show');
+            $( "#frmUser" ).validate({ignore: ".ignore"});
 
 
              user_id = $(this).data('id');
@@ -71,52 +97,54 @@ $(document).ready(function () {
             });
     });
 
-
-
     /* When click save button will create or update a user */
-    $('#btn_save').click(function (e) {
-        e.preventDefault();
-        $.validate();
-        $.ajax({
-            data: $('#frmUser').serialize(),
-            type:'post',
-            url:'/users',
-            success:function (data) {
+    $('#frmUser').submit(function (e) {
+       if($('#frmUser').valid()){
+           e.preventDefault();
 
-                if($('#user_id').val().length == 0){
-                    toastr["success"]("User inserted successfully.", "success");
-                }
-                else{
-                    toastr["success"]("User updated successfully.", "success");
-                }
+           $.ajax({
+               data: $('#frmUser').serialize(),
+               type:'post',
+               url:'/users',
+               success:function () {
 
-                $('#modalUserForm').modal('hide');
-                $('#users_table').DataTable().destroy();
-                getUsers();
-            },
-            error:function (data) {
+                   if($('#user_id').val().length == 0){
+                       toastr["success"]("User inserted successfully.", "success");
+                   }
+                   else{
+                       toastr["success"]("User updated successfully.", "success");
+                   }
 
-            }
-        });
+                   $('#modalUserForm').modal('hide');
+                   $('#users_table').DataTable().destroy();
+                   getUsers();
+               },
+               error:function (data) {
+                   console.log(data);
+               }
+           });
+       }
     })
 
 
     /* When click save changes on user profile */
-    $('#btn_save_profile').click(function (e) {
+    $('#frmProfile').submit(function (e) {
         e.preventDefault();
-        $.validate();
-        $.ajax({
-            data: $('#frmProfile').serialize(),
-            type:'post',
-            url:'/users',
-            success:function (data) {
-                toastr["success"]("User updated successfully.", "success");
-            },
-            error:function (data) {
+        if($('#frmProfile').valid()){
+            $.ajax({
+                data: $('#frmProfile').serialize(),
+                type:'post',
+                url:'/users',
+                success:function (data) {
+                    toastr["success"]("User updated successfully.", "success");
+                },
+                error:function (data) {
 
-            }
-        });
+                }
+            });
+        }
     })
+
 
     /* When click yes confirm will delete the selected user */
     $('#yes_confirm').click(function (e) {
@@ -156,7 +184,6 @@ function getUsers(){
     });
     $('#users_table').DataTable().columns.adjust();
 }
-
 
 
 

@@ -38,7 +38,9 @@
                                     </ul>
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form id="frmProfile" class="form" action="">
+                                            <form id="frmProfile" name="frmProfile" class="form" action="">
+{{--                                                helper to send form type--}}
+                                                <input name="profile" hidden>
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="row">
@@ -56,9 +58,9 @@
                                                                 <div class="form-group">
                                                                     <label>Gender</label>
                                                                     <select class="form-control" name="gender">
-                                                                        <option selected="{{$user->gender}}">Male</option>
-                                                                        <option selected="{{$user->gender}}">Female</option>
-                                                                        <option selected="{{$user->gender}}">Other</option>
+                                                                        @foreach($gender as $g)
+                                                                            <option {{old('gender',$g)==$user->gender? 'selected':''}}  value="{{$g}}">{{$g}}</option>
+                                                                        @endforeach
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -67,7 +69,7 @@
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input value="{{$user->email}}" class="form-control" type="email" name="email" placeholder="user@example.com" data-validation="required email emailexist">
+                                                                    <input value="{{$user->email}}" class="form-control" type="email" id="email" name="email" placeholder="user@example.com" data-validation="required email emailexist">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -88,7 +90,7 @@
 
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">
-                                                        <button class="btn btn-primary" type="button" id="btn_save_profile">Save Changes</button>
+                                                        <input class="btn btn-primary" type="submit" id="btn_save_profile" value="Save Changes">
                                                     </div>
                                                 </div>
                                             </form>
@@ -104,10 +106,11 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="px-xl-3">
-                                    <button class="btn btn-block btn-secondary">
-                                        <i class="fa fa-sign-out"></i>
-                                        <span>Logout</span>
-                                    </button>
+                                   <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="btn btn-block btn-secondary">
+                                       <i class="fa fa-sign-out"></i>
+                                       <span>Logout</span>
+                                   </a>
+
                                 </div>
                             </div>
                         </div>
@@ -132,22 +135,22 @@
             </div>
             <div class="card-body justify-content-center"  >
                 <div class="col-8">
-                    <form>
+                    <form name="frmChangePassword" id="frmChangePassword">
                         <div class="md-form mb-4" id="pass_block">
-                            <label for="password">Current Password</label>
-                            <input type="password" name="c_password" id="password" class="form-control" placeholder="Current password" data-validation="required length" data-validation-length="6-15">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" name="currentPassword" id="currentPassword" class="form-control" placeholder="Current password" data-validation="required length" data-validation-length="6-15">
                         </div>
                         <div class="md-form mb-4" id="pass_block">
-                            <label for="pass">New Password</label>
-                            <input type="password" name="pass" id="pass" class="form-control" placeholder="New password" data-validation="required length" data-validation-length="6-15">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="New password" data-validation="required length" data-validation-length="6-15">
                         </div>
                         <div class="md-form mb-4" id="pass_block">
-                            <label for="pass_confirmation">Confirm Password</label>
-                            <input type="password" name="pass_confirmation" id="pass_confirmation" class="form-control" placeholder="password" data-validation="confirmation">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="password" data-validation="confirmation">
                         </div>
                         <div class="row">
                             <div class="col d-flex" style="margin-left: 560px">
-                                <button class="btn btn-primary" type="submit">Save Changes</button>
+                                <input class="btn btn-primary" type="submit" value="Change Password">
                             </div>
                         </div>
                     </form>
