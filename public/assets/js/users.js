@@ -106,12 +106,12 @@ $(document).ready(function () {
                data: $('#frmUser').serialize(),
                type:'post',
                url:'/users',
-               success:function () {
-
+               success:function (data) {
                    if($('#user_id').val().length == 0){
                        toastr["success"]("User inserted successfully.", "success");
                    }
                    else{
+
                        toastr["success"]("User updated successfully.", "success");
                    }
 
@@ -128,14 +128,25 @@ $(document).ready(function () {
 
 
     /* When click save changes on user profile */
-    $('#frmProfile').submit(function (e) {
+
+    $('#frmProfile').on('submit',function (e) {
         e.preventDefault();
+        let formData = new FormData();
+        formData.append('user_id',$('#user_id').val());
+        formData.append('name',$('#name').val());
+        formData.append('email',$('#email').val());
+        formData.append('file',$('input[type=file]')[0].files[0]);
+
         if($('#frmProfile').valid()){
             $.ajax({
-                data: $('#frmProfile').serialize(),
+                data: new FormData(this),
                 type:'post',
                 url:'/users',
+                processData: false,
+                contentType: false,
                 success:function (data) {
+                    console.log(data);
+
                     toastr["success"]("User updated successfully.", "success");
                 },
                 error:function (data) {

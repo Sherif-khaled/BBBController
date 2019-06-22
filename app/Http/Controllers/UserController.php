@@ -79,6 +79,7 @@ class UserController extends Controller
                 ]);
             }
             else{
+
                 $user = User::where('id','=',$user_id)->first();
                 $user->name = $_POST['name'];
                 $user->email = $_POST['email'];
@@ -86,6 +87,14 @@ class UserController extends Controller
 
                     $user->gender = $_POST['gender'];
                     $user->country_id = $_POST['country'];
+                    if ($request->hasFile('image')) {
+                        $image = $request->file('image');
+                        $name = str_slug($_POST['name']).'.'.$image->getClientOriginalExtension();
+                        $destinationPath = public_path('/assets/img');
+                        $imagePath = $destinationPath. "/".  $name;
+                        $image->move($destinationPath, $name);
+                        $user->image = $name;
+                    }
                 }
 
                 $user->save();
@@ -98,7 +107,7 @@ class UserController extends Controller
             }
             else{return response()->json($e->message());}
         }
-            return response()->json(true);
+            return response()->json($request);
     }
 
     /**

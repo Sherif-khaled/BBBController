@@ -14,12 +14,15 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="well well-sm">
                                 <div class="row">
-                                    <div class="col-sm-2 col-md-2" id="content">
+{{--                                    <div class="col-sm-2 col-md-2" id="content">--}}
 
-                                        <img style=" padding-right:50px; width: 200px; height: 250px"  src="{{asset('assets/img/icons/common/female1.png')}}" alt="" class="img-rounded img-responsive fluidimage" />
-                                       <!--http://placehold.it/200x250-->
-                                    </div>
-                                    <div class="col-sm-6 col-md-6" style="margin-left: 150px">
+{{--                                        <img style=" padding-right:50px; width: 200px; height: 250px"  src="{{asset('assets/img/icons/common/female1.png')}}" alt="" class="img-rounded img-responsive fluidimage" />--}}
+{{--                                       <!--http://placehold.it/200x250-->--}}
+{{--                                    </div>--}}
+                                                            <div class="col-md-6" id="content">
+                                                                  <img class="img-thumbnail img-responsive fluid-image img-rounded" alt="Image placeholder" src="{{asset(Auth::User()->image)}}">
+                                                            </div>
+                                    <div class="col-sm-4 col-md-4" style="margin-left: 0px">
                                         <h4 id="prof_name">Bhaumik Patel <small>(Administrator)</small></h4>
                                         <div>
                                             <i class="fas fa-map-marker"></i>

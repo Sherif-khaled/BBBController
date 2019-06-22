@@ -5,41 +5,48 @@
             <div class="col">
                 <div class="row">
                     <div class="col mb-3">
+
                         <div class="card">
-                            <div class="card-body">
-                                <div class="e-profile">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-auto mb-3">
-                                            <div class="mx-auto" style="width: 140px;">
-                                                <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                                                    <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                            <form id="frmProfile" name="frmProfile" class="form" action="" enctype="multipart/form-data">
+                                <div class="card-body">
+                                    <div class="e-profile">
+
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="row d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                                        <div class="col-md-4 imgUp">
+                                                            <div class="imagePreview" style="width: 200px;">
+                                                                <img src="{{asset('assets/img/admin.jpg')}}" class="img-thumbnail">
+                                                            </div>
+                                                            <label class="btn btn-primary" style="width: 200px">
+                                                                <i class="fa fa-fw fa-camera"></i>
+
+                                                                Upload<input name="image" type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                                            <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                            <div class="col-md-4">
+
                                                 <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{$user->name}}</h4>
                                                 <p class="mb-0">Role Not Set</p>
-                                                <div class="mt-2" style="padding-top: 25px">
-                                                    <button class="btn btn-primary" type="button">
-                                                        <i class="fa fa-fw fa-camera"></i>
-                                                        <span>Change Photo</span>
-                                                    </button>
-                                                </div>
                                             </div>
-                                            <div class="text-center text-sm-right">
-                                                <span class="badge badge-secondary">administrator</span>
-                                                <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                                            <div class="text-right col-md-5">
+                                                <div class="text-muted float-right"><small>Last Joined : Joined 09 Dec 2017</small></div>
+
                                             </div>
+
                                         </div>
-                                    </div>
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
-                                    </ul>
-                                    <div class="tab-content pt-3">
-                                        <div class="tab-pane active">
-                                            <form id="frmProfile" name="frmProfile" class="form" action="">
-{{--                                                helper to send form type--}}
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
+                                        </ul>
+                                        <div class="tab-content pt-3">
+                                            <div class="tab-pane active">
+                                                {{--                                                helper to send form type--}}
                                                 <input name="profile" hidden>
                                                 <div class="row">
                                                     <div class="col">
@@ -50,6 +57,8 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Full Name</label>
+{{--                                                                    <input name="image" type="file" class="uploadFile img" value="Upload Photo">--}}
+
                                                                     <input class="form-control" type="text" name="name" placeholder="John Smith" value="{{$user->name}}" data-validation="length" data-validation-length="3-15"
                                                                            data-validation-error-msg="Between 3-15 chars">
                                                                 </div>
@@ -93,13 +102,14 @@
                                                         <input class="btn btn-primary" type="submit" id="btn_save_profile" value="Save Changes">
                                                     </div>
                                                 </div>
-                                            </form>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
+
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
@@ -160,10 +170,83 @@
     </div>
 
 @endsection
+<script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function() {
+            $(document).on("change",".uploadFile", function(e)
+            {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test( files[0].type)){ // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function(){ // set image data as background of div
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+                    }
+                }
+
+            });
+        });
+    });
+</script>
 <style type="text/css">
     body{
         margin-top:20px;
         background:#f8f8f8
     }
+
+    .imagePreview {
+        width: 100%;
+        height: 180px;
+        background-position: center center;
+        background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+        background-color:#fff;
+        background-size: cover;
+        background-repeat:no-repeat;
+        display: inline-block;
+        box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+    }
+    .btn-primary
+    {
+        display:block;
+        border-radius:0px;
+        box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+        margin-top:-5px;
+    }
+    .imgUp
+    {
+        margin-bottom:15px;
+    }
+    .del
+    {
+        position:absolute;
+        top:0px;
+        right:15px;
+        width:30px;
+        height:30px;
+        text-align:center;
+        line-height:30px;
+        background-color:rgba(255,255,255,0.6);
+        cursor:pointer;
+    }
+    .imgAdd
+    {
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        background-color:#4bd7ef;
+        color:#fff;
+        box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+        text-align:center;
+        line-height:30px;
+        margin-top:0px;
+        cursor:pointer;
+        font-size:15px;
+    }
 </style>
+
