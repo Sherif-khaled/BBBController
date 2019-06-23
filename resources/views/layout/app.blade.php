@@ -39,6 +39,8 @@
 
 
     <script src="{{ asset('assets/js/users.js') }}"></script>
+    <script src="{{ asset('assets/js/helper.js') }}"></script>
+
 
 
 </head>
@@ -61,9 +63,20 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
-              <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="{{asset(Auth::User()->image)}}">
-              </span>
+                              <span class="avatar avatar-sm rounded-circle">
+                                  @if(Auth::user()->image == null)
+                                      @if(Auth::user()->gender == 'Male')
+                                          <img alt="Image placeholder" src="{{asset('assets/img/icons/common/male.png')}}">
+
+                                      @else
+                                          <img alt="Image placeholder" src="{{asset('assets/img/icons/common/female.png')}}">
+
+                                      @endif
+                                  @else
+                                      <img alt="Image placeholder" src="{{asset('assets/img/' . Auth::User()->image)}}">
+
+                                  @endif
+                              </span>
                             <div class="media-body ml-2 d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">{{Auth::User()->name}}</span>
                             </div>

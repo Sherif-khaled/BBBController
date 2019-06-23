@@ -17,7 +17,17 @@
                                                     <div class="text-center text-sm-left mb-2 mb-sm-0">
                                                         <div class="col-md-4 imgUp">
                                                             <div class="imagePreview" style="width: 200px;">
-                                                                <img src="{{asset('assets/img/admin.jpg')}}" class="img-thumbnail">
+                                                                @if($user->image == null)
+                                                                    @if($user->gender == 'Male')
+                                                                        <img src="{{asset('assets/img/icons/common/male.png')}}" class="img-thumbnail">
+                                                                    @elseif($user->gender == 'Female')
+                                                                        <img src="{{asset('assets/img/icons/common/female.png')}}" class="img-thumbnail">
+
+                                                                    @else
+                                                                    @endif
+                                                                @else
+                                                                    <img src="{{asset('assets/img/' . Auth::User()->image)}}" class="img-thumbnail">
+                                                                @endif
                                                             </div>
                                                             <label class="btn btn-primary" style="width: 200px">
                                                                 <i class="fa fa-fw fa-camera"></i>

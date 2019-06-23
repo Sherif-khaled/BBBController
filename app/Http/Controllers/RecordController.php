@@ -5,7 +5,7 @@ namespace BBBController\Http\Controllers;
 use Illuminate\Http\Request;
 use BBBController\Helpers\Converter;
 use BBBController\Helpers\CMD;
-
+use DataTables;
 class RecordController extends Controller
 {
     public function __construct()
@@ -52,6 +52,10 @@ class RecordController extends Controller
 
 
         return view('records.show',compact('records_info','records'));
+    }
+    public function getRecords(){
+        $columns= ['id', 'meeting_id', 'email'];
+
     }
     public function recordDetails($record_id){
 

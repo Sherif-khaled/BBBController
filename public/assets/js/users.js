@@ -35,11 +35,27 @@ $(document).ready(function () {
      user_id = $(this).data('id');
      /* get user to edit form */
      $.get('/users/' + user_id +'/details', function (data) {
+         let assetsURL   = window.location.origin + '/assets/img/icons/common/';
          $('#prof_name').html(data.user.name);
          $('#prof_email').html('<i class="fas fa-envelope"></i> ' + data.user.email);
          $('#prof_phone').html('<i class="fas fa-mobile-alt"></i> ' + data.user.phone);
          $('#prof_gender').html('<i class="fa fa-venus-mars"></i> ' + data.user.gender);
          $('#prof_country').html(data.country.name);
+         if (!$.trim(data.user.image)) if (data.user.gender == 'Male') {
+             getBase64Image(assetsURL + 'male.png', function (base64) {
+                 $('#detailsAvatar').attr('src', base64);
+             });
+
+         } else {
+             getBase64Image(assetsURL + 'female.png', function (base64) {
+                 $('#detailsAvatar').attr('src', base64);
+             });
+         } else {
+
+             getBase64Image(assetsURL + 'male.png', function (base64) {
+                 $('#detailsAvatar').attr('src', base64);
+             });
+         }
      });
      $('#detailsModal').modal('show');
 
