@@ -2,15 +2,15 @@
 
 namespace BBBController\Http\Controllers;
 
+use BBBController\Service;
 use Illuminate\Http\Request;
-
+use BBBController\Console\Shell\ShellBase;
 class DashboardController extends Controller
 {
     function index(){
-        $ram = $this->get_server_memory_usage();
-        $cpu = $this->get_server_cpu_usage();
-        $hdd  = disk_free_space("/");
-        return view('dashboard',compact('ram','cpu','hdd'));
+        $services = Service::all();
+
+        return view('dashboard',compact('services'));
     }
     function get_server_memory_usage(){
 
@@ -28,6 +28,23 @@ class DashboardController extends Controller
 
         $load = sys_getloadavg();
         return $load[0];
-
     }
+
+    /**
+     * Change Service Status [Enable - Disable]
+     * @param $id service ID
+     * @return json
+     */
+    public function changeStates($id){
+        $service = Service::find($id);
+        if (!empty($service)) {
+
+            $service->enable = request()->enabled;
+            request()->enabled == 1 ? $service->current_status = 'Running' : $service->current_status = 'Stopped';
+
+        }
+        $service->save();
+        return response()->json(['success'=>'Service status changed successfully.']);
+    }
+
 }

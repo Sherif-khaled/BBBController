@@ -39,6 +39,7 @@
 
 
     <script src="{{ asset('assets/js/users.js') }}"></script>
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('assets/js/helper.js') }}"></script>
 
 

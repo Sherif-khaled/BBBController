@@ -1,0 +1,19 @@
+RAM
+===========
+1-total  => awk '/MemTotal/ {print $2}' /proc/meminfo
+2-free   => awk '/MemFree/ {print $2}' /proc/meminfo
+3-used   =>
+
+SWAP
+======
+1-total  => awk '/SwapTotal/ {print $2}' /proc/meminfo
+2-free   => awk '/SwapFree/ {print $2}' /proc/meminfo
+3-used   =>
+
+cpu
+======
+1- grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage "%"}'
+
+
+
+

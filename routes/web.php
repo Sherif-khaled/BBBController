@@ -13,6 +13,8 @@
 
 Route::group(['middleware' => ['dConfig']], function () {
     Route::get('/','DashboardController@index')->name('dashboard')->middleware('auth');
+    Route::post('/changestatus/{id}','DashboardController@changeStates')->middleware('auth');
+
 
     Auth::routes();
 
