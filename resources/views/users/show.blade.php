@@ -8,11 +8,10 @@
     @include('users.models.details')
 
 
-<div class="table-responsive" style="width: 1000px">
-{{--    <a  href=""  class="btn btn-default mb-4" data-toggle="modal" data-target="#modalCreateForm">Create</a>--}}
+    <div class="table-responsive col-md-11">
     <a  href="javascript:void(0)"  class="btn btn-default mb-4" id="createUser">Create</a>
 
-    <table id="users_table" class="table table-striped" style="text-align: center">
+        <table id="users_table" class="table table-striped align-items-center">
         <thead class="table-dark">
         <th>id</th>
         <th>Name</th>
@@ -23,3 +22,12 @@
     </table>
 </div>
 @endsection
+<style>
+    .table td {
+        text-align: center;
+    }
+
+    .table th {
+        text-align: center;
+    }
+</style>

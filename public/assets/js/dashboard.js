@@ -10,8 +10,6 @@ $(document).ready(function () {
         if($(this).is(":checked")) {
          status = 1;
         }
-        alert($(this).data('id'));
-
         $.ajax({
             url: '/changestatus/' + service_id,
             method:'post',

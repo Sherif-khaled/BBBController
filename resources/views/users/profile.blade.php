@@ -19,17 +19,25 @@
                                                             <div class="imagePreview" style="width: 200px;">
                                                                 @if($user->image == null)
                                                                     @if($user->gender == 'Male')
-                                                                        <img src="{{asset('assets/img/icons/common/male.png')}}" class="img-thumbnail">
+                                                                        <img src="{{asset('assets/img/icons/common/male.png')}}"
+                                                                             class="img-thumbnail"
+                                                                             alt="{{$user->name}}">
                                                                     @elseif($user->gender == 'Female')
-                                                                        <img src="{{asset('assets/img/icons/common/female.png')}}" class="img-thumbnail">
+                                                                        <img src="{{asset('assets/img/icons/common/female.png')}}"
+                                                                             class="img-thumbnail"
+                                                                             alt="{{$user->name}}">
 
                                                                     @else
                                                                     @endif
                                                                 @else
-                                                                    <img src="{{asset('assets/img/' . Auth::User()->image)}}" class="img-thumbnail">
+                                                                    <img src="{{asset('assets/img/' . Auth::User()->image)}}"
+                                                                         class="img-thumbnail" alt="{{$user->name}}">
                                                                 @endif
                                                             </div>
-                                                            <label class="btn btn-primary" style="width: 200px">
+
+                                                        </div>
+                                                        <div class="pt--7">
+                                                            <label class="btn btn-primary mb--9" style="width: 200px">
                                                                 <i class="fa fa-fw fa-camera"></i>
 
                                                                 Upload<input name="image" type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
@@ -148,32 +156,42 @@
         </div>
     </div>
 {{--************************************************************************--}}
-    <div style="width: 810px; padding-left:40px">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title"><h3>Change Password</h3></div>
-            </div>
-            <div class="card-body justify-content-center"  >
-                <div class="col-8">
-                    <form name="frmChangePassword" id="frmChangePassword">
-                        <div class="md-form mb-4" id="pass_block">
-                            <label for="currentPassword">Current Password</label>
-                            <input type="password" name="currentPassword" id="currentPassword" class="form-control" placeholder="Current password" data-validation="required length" data-validation-length="6-15">
-                        </div>
-                        <div class="md-form mb-4" id="pass_block">
-                            <label for="newPassword">New Password</label>
-                            <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="New password" data-validation="required length" data-validation-length="6-15">
-                        </div>
-                        <div class="md-form mb-4" id="pass_block">
-                            <label for="confirmPassword">Confirm Password</label>
-                            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="password" data-validation="confirmation">
-                        </div>
-                        <div class="row">
-                            <div class="col d-flex" style="margin-left: 560px">
-                                <input class="btn btn-primary" type="submit" value="Change Password">
+            <div class="container-fluid mb--50">
+                <div class="row">
+                    <div class="col col-md-9 mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title"><h3>Change Password</h3></div>
                             </div>
-                        </div>
-                    </form>
+                            <div class="card-body">
+                                <div class="col-8">
+                                    <form name="frmChangePassword" id="frmChangePassword">
+                                        <div class="md-form mb-4" id="pass_block">
+                                            <label for="currentPassword">Current Password</label>
+                                            <input type="password" name="currentPassword" id="currentPassword"
+                                                   class="form-control" placeholder="Current password"
+                                                   data-validation="required length" data-validation-length="6-15">
+                                        </div>
+                                        <div class="md-form mb-4" id="pass_block">
+                                            <label for="newPassword">New Password</label>
+                                            <input type="password" name="newPassword" id="newPassword"
+                                                   class="form-control" placeholder="New password"
+                                                   data-validation="required length" data-validation-length="6-15">
+                                        </div>
+                                        <div class="md-form mb-4" id="pass_block">
+                                            <label for="confirmPassword">Confirm Password</label>
+                                            <input type="password" name="confirmPassword" id="confirmPassword"
+                                                   class="form-control" placeholder="password"
+                                                   data-validation="confirmation">
+                                        </div>
+                                        <div class="float-right">
+                                            <div class="col d-flex ">
+                                                <input class="btn btn-primary" type="submit" value="Change Password">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>

@@ -2,9 +2,9 @@
 
 namespace BBBController\Http\Controllers;
 
+use BBBController\Console\Shell\OSService;
 use BBBController\Service;
-use Illuminate\Http\Request;
-use BBBController\Console\Shell\ShellBase;
+
 class DashboardController extends Controller
 {
     function index(){
@@ -12,6 +12,7 @@ class DashboardController extends Controller
 
         return view('dashboard',compact('services'));
     }
+
     function get_server_memory_usage(){
 
         $free = shell_exec('free');
@@ -24,6 +25,7 @@ class DashboardController extends Controller
 
         return $memory_usage;
     }
+
     function get_server_cpu_usage(){
 
         $load = sys_getloadavg();
@@ -33,7 +35,7 @@ class DashboardController extends Controller
     /**
      * Change Service Status [Enable - Disable]
      * @param $id service ID
-     * @return json
+     * @return $json
      */
     public function changeStates($id){
         $service = Service::find($id);
@@ -41,9 +43,19 @@ class DashboardController extends Controller
 
             $service->enable = request()->enabled;
             request()->enabled == 1 ? $service->current_status = 'Running' : $service->current_status = 'Stopped';
+            $process = new OSService($service->service_name);
 
+            if (request()->enabled == 0) {
+                if ($process->stop()) {
+                    $service->save();
+                }
+            } elseif (request()->enabled == 1) {
+                if ($process->start()) {
+                    $service->save();
+                }
+            }
         }
-        $service->save();
+
         return response()->json(['success'=>'Service status changed successfully.']);
     }
 
