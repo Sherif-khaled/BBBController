@@ -126,4 +126,42 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('#brandingfrm').validate({
+        rules: {
+            'company-name': {
+                required: true,
+                rangelength: [3, 25],
+            },
+            'logo-path': {
+                required: true,
+                accept: "image/*"
+            }
+        },
+        messages: {
+            'company-name': {
+                required: "Please enter the company name",
+                rangelength: "The company name length must be between {0} characters"
+            },
+            'logo-path': {
+                required: "Please upload company logo",
+                accept: "Allow images extensions only"
+            }
+
+        }
+    })
+
+    $('#generalfrm').validate({
+        rules: {
+            'records-path': {
+                required: true,
+            },
+        },
+        messages: {
+            'records-path': {
+                required: "Please select the bigbluebutton records path",
+            },
+
+        }
+    })
 })

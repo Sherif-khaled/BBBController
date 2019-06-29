@@ -7,7 +7,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="./index.html">
-            <img src="{{asset('assets/img/brand/blue.png')}}" style="  height: 200px;
+            <img src="{{asset('assets/img/brand/logo')}}" style="  height: 200px;
   width: 50%;" class="navbar-brand-img" alt="...">
         </a>
 

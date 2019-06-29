@@ -17,7 +17,7 @@ Route::group(['middleware' => ['dConfig']], function () {
 
 
     Auth::routes();
-
+    //********************** Users *********************************
     Route::get('/getusers','UserController@getUsers')->name('users.getusers');
     Route::post('/checkemail','UserController@checkEmailExist')->name('users.checkEmailExist');
     Route::get('/users/{id}/details','UserController@details')->name('users.details');
@@ -25,7 +25,7 @@ Route::group(['middleware' => ['dConfig']], function () {
     Route::post('/changepassword','UserController@changePassword')->name('users.changepassword');
     Route::resource('users','UserController');
 
-
+    //********************** Records *********************************
     Route::get('/records','RecordController@show')->name('record.show')->middleware('auth');
     Route::post('/delete/{meeting_id}','RecordController@delete')->name('record.delete');
 
@@ -42,6 +42,7 @@ Route::group(['middleware' => ['dConfig']], function () {
 
     Route::get('/settings','BigbluebuttonSettingsController@index')->name('settings.index');
 
+    //********************** Options *********************************
     Route::get('/options','BBBControllerOptionsController@index')->name('options.index');
     Route::post('/options','BBBControllerOptionsController@save')->name('options.save');
 

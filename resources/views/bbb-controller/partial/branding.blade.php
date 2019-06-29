@@ -1,5 +1,5 @@
-<form method="post" action="{{route('options.save')}}" enctype="multipart/form-data">
-    @csrf
+<form id="brandingfrm" role="form" name="brandingfrm" enctype="multipart/form-data">
+    @csrf()
     <input name="brand_form" hidden>
     <div class="form-group">
         <label for="company-name">Company Name</label>
@@ -25,10 +25,10 @@
                     Browse… <input type="file" id="logo-path" name="logo-path">
                 </span>
             </span>
-            <input type="text" class="form-control" readonly>
+            <input type="text" name="logo-path" class="form-control" readonly>
         </div>
         <div class="error text-danger">{{ $errors->first('logo-path') }}</div>
-        <img id='img-upload'/>
+        <img class="img-thumbnail img-responsive fluid-image img-rounded" id='img-upload'/>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
@@ -57,7 +57,7 @@
     }
 
     #img-upload{
-        width: 100%;
+        width: 25%;
     }
 </style>
 @section('script')

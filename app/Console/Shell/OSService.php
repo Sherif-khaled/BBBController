@@ -17,7 +17,7 @@ class OSService extends ShellBase
 
     public function start()
     {
-        $exec = "echo 16121987 | /usr/bin/sudo -S sudo systemctl start " . $this->service . "& echo $!";
+        $exec = "echo Admin159# | /usr/bin/sudo -S sudo systemctl start " . $this->service . "& echo $!";
         $this->command = $exec;
         $pid = $this->execute();
         return $this->processStatus($pid);
@@ -34,7 +34,7 @@ class OSService extends ShellBase
 
     public function stop()
     {
-        $exec = "echo 16121987 | /usr/bin/sudo -S sudo systemctl stop " . $this->service . "& echo $!";
+        $exec = "echo Admin159# | /usr/bin/sudo -S sudo systemctl stop " . $this->service . "& echo $!";
         $this->command = $exec;
         $pid = $this->execute();
         $kill = "echo 16121987 | /usr/bin/sudo -S sudo kill -9 $pid[0]";
@@ -45,7 +45,7 @@ class OSService extends ShellBase
 
     public function restart()
     {
-        $exec = "echo 16121987 | /usr/bin/sudo -S sudo systemctl restart " . $this->service;
+        $exec = "echo Admin159# | /usr/bin/sudo -S sudo systemctl restart " . $this->service;
         $this->command = $exec;
         $this->execute();
     }

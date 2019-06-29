@@ -8,13 +8,10 @@ use BBBController\Country;
 use Camroncade\Timezone\Timezone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Storage;
-use League\Flysystem\Config;
-use BBBController\Http\Requests\ConfigurationRequest;
 
 class BBBControllerOptionsController extends Controller
 {
-    protected static $brand_fields = [
+    protected $brand_fields = [
         'company-name',
         'activity',
         'logo-path',
@@ -23,6 +20,17 @@ class BBBControllerOptionsController extends Controller
     protected static $general_fields = [
         'country',
         'timezone',
+        'records-path'
+    ];
+    protected static $server_fields = [
+        'sudo_username',
+        'sudo_pass',
+        'host',
+        'username',
+        'password',
+        'key',
+        'keyphrase',
+        'root'
     ];
 
    public function index(){
@@ -42,17 +50,27 @@ class BBBControllerOptionsController extends Controller
 
        return view('bbb-controller.options',compact('timezone_select','countries','company_activities'));
    }
-   public function save(ConfigurationRequest $request){
 
-       if($request->hasFile('logo-path')){
+    public function save(Request $request)
+    {
 
-           $logo_path = $request->file('logo-path')->storeAs('images','brand.' .$request->file('logo-path')->getClientOriginalExtension());
+        if ($request->hasFile( 'logo-path' )) {
+            $logo = $request->file( 'logo-path' );
+            $name = 'logo';
+            $destinationPath = public_path( '/assets/img/brand/' );
+            $logo->move( $destinationPath, $name );
+
        }
+
+//       if($request->hasFile('logo-path')){
+//
+//           $logo_path = $request->file('logo-path')->storeAs('/assets/img/brand','brand.' .$request->file('logo-path')->getClientOriginalExtension());
+//       }
 
 
        if($request->has('brand_form')){
 
-           $this->form($this::$brand_fields);
+           $this->form( $this->brand_fields );
 
        }
        elseif ($request->has('general_form')){
@@ -61,27 +79,35 @@ class BBBControllerOptionsController extends Controller
 
        }
 
-       return redirect('/options')->with('success','The settings has been saved successfully');
+        return response()->json( $request->file( 'logo-path' ) );
 
    }
-   private function form($keys){
+
+    public function form($values)
+    {
 
        $config = Configuration::all();
 
        if($config->count() == 0){
 
-           foreach ($keys as $key){
+           foreach ($values as $value) {
 
-               Configuration::insert(["config_key" => $key,"config_value" => request($key)]);
+               Configuration::insert( array("config_key" => $value, "config_value" => request( $value )) );
 
            }
        }
        else{
 
-           foreach ($keys as $key){
+           foreach ($values as $value) {
+               $val = request( $value );
+               if ($value == 'logo-path') {
 
-               Configuration::Where('config_key', '=', $key)->update(['config_value' => request($key)]);
-               \config(['bbbcontroller.brand.' . $key => request($key)]);
+                   $logo = request()->file( 'logo-path' );
+                   $val = '/assets/img/brand/logo.' . $logo->getClientOriginalExtension();
+               }
+
+               Configuration::Where( 'config_key', '=', $value )->update( array('config_value' => $val) );
+               \config( array('bbbcontroller.brand.' . $value => request( $value )) );
 //dd(\config('bbbcontroller.brand.company_name'));
            }
           // Artisan::call('cache');

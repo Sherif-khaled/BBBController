@@ -1,4 +1,4 @@
-<form method="post" action="{{route('options.save')}}">
+<form id="generalfrm" role="form" name="generalfrm">
     @csrf
     <div class="form-group">
         <input name="general_form" hidden>

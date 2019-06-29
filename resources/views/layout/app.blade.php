@@ -37,9 +37,9 @@
     <script src="{{asset('assets/js/validations.js')}}"></script>
 
 
-
-    <script src="{{ asset('assets/js/users.js') }}"></script>
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/js/users.js') }}"></script>
+    <script src="{{ asset('assets/js/settings.js') }}"></script>
     <script src="{{ asset('assets/js/helper.js') }}"></script>
 
 
