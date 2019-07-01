@@ -105,9 +105,16 @@ class BBBControllerOptionsController extends Controller
                    $logo = request()->file( 'logo-path' );
                    $val = '/assets/img/brand/logo.' . $logo->getClientOriginalExtension();
                }
+               $config = Configuration::where( 'config_key', '=', $value );
+               if ($config->count() == 0) {
+                   $config->insert( array("config_key" => $value, "config_value" => $val) );
+               } else {
+                   //Configuration::Where( 'config_key', '=', $value )->update( array('config_value' => $val) );
+                   $config->update( array('config_value' => $val) );
+                   config( array('bbbcontroller.brand.' . $value => request( $value )) );
+               }
 
-               Configuration::Where( 'config_key', '=', $value )->update( array('config_value' => $val) );
-               \config( array('bbbcontroller.brand.' . $value => request( $value )) );
+
 //dd(\config('bbbcontroller.brand.company_name'));
            }
           // Artisan::call('cache');

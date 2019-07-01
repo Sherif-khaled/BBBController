@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32f5f6b-fd1d-44ec-8960-a94684242822" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/js/settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Shell/OSService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Shell/OSService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/img/brand/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/validations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bbb-controller/partial/branding.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-controller/partial/branding.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/partial/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partial/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/admin.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,26 +32,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/server/partial/service_status.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -144,11 +113,11 @@
         <option value="$PROJECT_DIR$/resources/views/layout/partial/nav.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/settings.js" />
         <option value="$PROJECT_DIR$/public/assets/js/validations.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" />
         <option value="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/branding.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" />
       </list>
     </option>
   </component>
@@ -275,7 +244,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,26 +265,6 @@
             <path>
               <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
               <item name="BBBController" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Console" type="462c0819:PsiDirectoryNode" />
-              <item name="Shell" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -338,34 +286,13 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="bbb-controller" type="462c0819:PsiDirectoryNode" />
-              <item name="partial" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="partial" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,6 +407,7 @@
       <workItem from="1561651302191" duration="21795000" />
       <workItem from="1561732461921" duration="4593000" />
       <workItem from="1561751586950" duration="315000" />
+      <workItem from="1562000208253" duration="3985000" />
     </task>
     <task id="LOCAL-00001" summary="Excuting Service">
       <created>1561685157596</created>
@@ -488,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561685157596</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Server Settings View">
+      <created>1561834703643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561834703643</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -524,13 +459,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494228000" />
+    <option name="totallyTimeSpent" value="498434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1280" height="999" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48789573" weight="0.20340356" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48789573" visible="true" weight="0.20664506" />
       <window_info id="Structure" order="1" sideWeight="0.5121043" side_tool="true" weight="0.18291862" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -545,7 +479,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998747" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3218391" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32110092" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32998747" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -580,7 +514,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Excuting Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Excuting Service" />
+    <MESSAGE value="Server Settings View" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server Settings View" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -849,16 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="18" />
-          <folding>
-            <element signature="e#50#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -880,6 +805,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/server/partial/service_status.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -887,10 +819,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+        <state relative-caret-position="178">
+          <caret line="97" column="8" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <folding>
+            <element signature="e#50#84#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
