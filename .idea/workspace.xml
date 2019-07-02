@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a32f5f6b-fd1d-44ec-8960-a94684242822" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Configuration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/validations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +38,26 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/settings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,12 +87,17 @@
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="ADD_SUFFIX_TO_CHERRY_PICKS_OF_PUBLISHED_COMMITS" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/assets/js/email-exist.js" />
         <option value="$PROJECT_DIR$/resources/views/users/models/detalies.blade.php" />
@@ -107,17 +137,18 @@
         <option value="$PROJECT_DIR$/resources/views/users/show.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/dashboard.js" />
         <option value="$PROJECT_DIR$/resources/views/users/profile.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/app.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Console/Shell/OSService.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/partial/nav.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/settings.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/validations.js" />
-        <option value="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/branding.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/settings.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/validations.js" />
+        <option value="$PROJECT_DIR$/app/Configuration.php" />
       </list>
     </option>
   </component>
@@ -244,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,7 +292,32 @@
               <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
               <item name="BBBController" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
@@ -292,7 +349,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,14 +361,14 @@
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/users/models" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/server/partial" />
       <recent name="$PROJECT_DIR$/resources/views/users/models" />
       <recent name="$PROJECT_DIR$/resources/views/bbb-controller/partial" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/users/models" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -407,7 +463,8 @@
       <workItem from="1561651302191" duration="21795000" />
       <workItem from="1561732461921" duration="4593000" />
       <workItem from="1561751586950" duration="315000" />
-      <workItem from="1562000208253" duration="3985000" />
+      <workItem from="1562000208253" duration="4213000" />
+      <workItem from="1562055272023" duration="17369000" />
     </task>
     <task id="LOCAL-00001" summary="Excuting Service">
       <created>1561685157596</created>
@@ -423,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561834703643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix insert new config key bug">
+      <created>1562005266263</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562005266263</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -459,12 +523,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="498434000" />
+    <option name="totallyTimeSpent" value="516031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1280" height="999" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48789573" visible="true" weight="0.20664506" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48789573" visible="true" weight="0.20988655" />
       <window_info id="Structure" order="1" sideWeight="0.5121043" side_tool="true" weight="0.18291862" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -479,7 +543,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998747" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32110092" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32068965" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32998747" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -515,7 +579,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Excuting Service" />
     <MESSAGE value="Server Settings View" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server Settings View" />
+    <MESSAGE value="fix insert new config key bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix insert new config key bug" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -527,13 +592,6 @@
     </find-history>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/js/helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Records/RecordsBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -683,13 +741,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Shell/ShellBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -749,38 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="164" column="23" selection-start-line="158" selection-start-column="8" selection-end-line="174" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layout/partial/nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="34" column="95" lean-forward="true" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/validations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="161" column="73" selection-start-line="161" selection-start-column="73" selection-end-line="161" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -791,24 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/branding.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="34" selection-start-column="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -819,13 +828,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="56" column="61" lean-forward="true" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="106" column="33" selection-start-line="106" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BBBControllerOptionsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="97" column="8" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+        <state relative-caret-position="308">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding>
             <element signature="e#50#84#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/validations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="167" column="3" lean-forward="true" selection-start-line="167" selection-start-column="3" selection-end-line="167" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/server.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>

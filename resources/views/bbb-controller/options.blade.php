@@ -54,7 +54,7 @@
                     @include('bbb-controller.partial.branding')
                 </div>
                 <div class="tab-pane fade" id="v-pills-server" role="tabpanel" aria-labelledby="v-pills-server-tab">
-                    @include('bbb-controller.partial.server');
+                    @include('bbb-controller.partial.server')
                 </div>
                 <div class="tab-pane fade" id="v-pills-notifications" role="tabpanel"
                      aria-labelledby="v-pills-notifications-tab">...

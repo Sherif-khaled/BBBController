@@ -25,7 +25,7 @@ $(document).ready(function () {
                     type: "post",
                     data: {
                         function(data) {
-                            return ;
+
                         },
 
                     }
@@ -64,7 +64,7 @@ $(document).ready(function () {
     let value;
     $('#email').focus(function () {
         value = $(this).val();
-    })
+    });
     $('#frmProfile').validate({
         rules: {
             name: {
@@ -79,9 +79,10 @@ $(document).ready(function () {
                     url: "/checkemail",
                     type: "post",
                     data: {
-                        function(data) {
-                            if(value !== $('#email').val()){
-                                return ;
+                        function() {
+                            if (value === $('#email').val()) {
+                            } else {
+                                return;
 
                             }
                         },
@@ -149,7 +150,7 @@ $(document).ready(function () {
             }
 
         }
-    })
+    });
 
     $('#generalfrm').validate({
         rules: {
@@ -164,4 +165,4 @@ $(document).ready(function () {
 
         }
     })
-})
+});

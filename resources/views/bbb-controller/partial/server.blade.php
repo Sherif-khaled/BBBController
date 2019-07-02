@@ -1,5 +1,5 @@
 <form id="serverfrm" name="serverfrm" role="form">
-
+    <input type="text" value="" id="server_form" name="server_form" hidden>
 
     <div class="custom-control custom-radio custom-control-inline">
         <input type="radio" checked value="local" class="custom-control-input" id="l_server" name="server_type">
@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="sudo_pass">Sudo Password</label>
-                <input type="text" class="form-control" name="sudo_pass" id="sudo_pass">
+                <input type="password" class="form-control" name="sudo_password" id="sudo_password">
             </div>
 
         </div>
@@ -39,7 +39,7 @@
 
             <div class="form-group">
                 <label for="host_ip">Host IP</label>
-                <input type="text" class="form-control" name="host" id="host_ip">
+                <input type="text" class="form-control" name="host_ip" id="host_ip">
             </div>
 
             <div class="form-group">
@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password">
             </div>
 
             <div class="form-group">
@@ -76,16 +76,20 @@
 
 <script>
     $('#remote').hide();
+    $('#server_form').val('local');
     $('input[type=radio][name=server_type]').on('change', function () {
         switch ($(this).val()) {
             case 'local':
                 $('#local').show();
                 $('#remote').hide();
+                $('#server_form').val('local');
                 break;
             case 'remote':
                 $('#local').hide();
                 $('#remote').show();
+                $('#server_form').val('remote');
                 break;
         }
-    });
+    })
+
 </script>

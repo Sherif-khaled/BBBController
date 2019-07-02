@@ -21,6 +21,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 
+    <!-- Input Mask CSS -->
+
+
 
     <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
@@ -35,6 +38,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
     <script src="{{asset('assets/js/validations.js')}}"></script>
+
+    <!-- Input Mask -->
+
 
 
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
