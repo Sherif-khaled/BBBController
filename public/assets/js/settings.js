@@ -43,15 +43,14 @@ $(document).ready(function () {
 
         if ($('#l_server').is(':checked')) {
 
+
             localServerValidate();
 
-        }
-        if ($('#r_server').is(':checked')) {
+        } else if ($('#r_server').is(':checked')) {
+
             remoteServerValidate();
         }
-
-        if ($(this).valid()) {
-            $.ajax({
+        $.ajax({
                 url: '/options',
                 data: new FormData(this),
                 type: 'post',
@@ -65,7 +64,6 @@ $(document).ready(function () {
                 }
 
             })
-        }
 
     })
 
@@ -87,12 +85,12 @@ function localServerValidate() {
         messages: {
             'sudo_username': {
                 required: "Please enter the sudo username",
-                rangelength: "The sudo username length must be between {0} characters"
+                rangelength: "The sudo username length must be between {0} and {1} characters"
 
             },
             'sudo_password': {
                 required: "Please enter the sudo password",
-                rangelength: "The sudo password length must be between {0} characters"
+                rangelength: "The sudo password length must be between {0} and {1} characters"
 
             },
 
@@ -101,6 +99,7 @@ function localServerValidate() {
 }
 
 function remoteServerValidate() {
+
     $('#serverfrm').validate({
         rules: {
             'host_ip': {
@@ -126,12 +125,12 @@ function remoteServerValidate() {
             },
             'username': {
                 required: "Please enter the username",
-                rangelength: "The sudo username length must be between {0} characters"
+                rangelength: "The sudo username length must be between {0} and {1} characters"
 
             },
             'password': {
                 required: "Please enter the password",
-                rangelength: "The sudo password length must be between {0} characters"
+                rangelength: "The sudo password length must be between {0} and {1} characters"
 
             },
 

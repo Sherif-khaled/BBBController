@@ -4,18 +4,16 @@
     <div class="form-group">
         <label for="company-name">Company Name</label>
         <input type="text" name="company-name" class="form-control" id="company-name" aria-describedby="companyHelp"
-               placeholder="Company Name" value="{{old('company-name' ?? config('bbbcontroller.brand.company_name'))}}">
-        <div class="error text-danger">{{ $errors->first('company-name') }}</div>
+               placeholder="Company Name" value="{{config('bbbController.branding.company-name')}}">
     </div>
     <div class="form-group">
         <label for="company-activity">Company Activity</label>
         <select name="activity" class="form-control">
-            <option value="" disabled selected>Choose your option</option>
+            <option value="" disabled selected>Select company activity</option>
             @foreach($company_activities as $activity)
-               <option value="{{$activity->id}}" {{old($activity->id) ?? 'selected'}}>{{$activity->activity}}</option>
+                <option value="{{$activity->id}}" {{$activity->id == config('bbbController.branding.activity') ? 'selected':''}}>{{$activity->activity}}</option>
             @endforeach
         </select>
-        <div class="error text-danger">{{ $errors->first('activity') }}</div>
     </div>
     <div class="form-group">
         <label>Upload Company Logo</label>
@@ -25,10 +23,11 @@
                     Browse… <input type="file" id="logo-path" name="logo-path">
                 </span>
             </span>
-            <input type="text" name="logo-path" class="form-control" readonly>
+            <input type="text" name="logo-path" class="form-control" readonly
+                   value="{{config('bbbController.branding.logo-path')}}">
         </div>
-        <div class="error text-danger">{{ $errors->first('logo-path') }}</div>
-        <img class="img-thumbnail img-responsive fluid-image img-rounded" id='img-upload'/>
+        <img src="{{asset(config('bbbController.branding.logo-path'))}}"
+             class="img-thumbnail img-responsive fluid-image img-rounded" id='img-upload'/>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>

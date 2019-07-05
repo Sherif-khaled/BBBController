@@ -24,10 +24,12 @@ class BBBControllerOptionsController extends Controller
         'records-path'
     ];
     protected static $local_server_fields = [
+        'server_enabled',
         'sudo_username',
         'sudo_password',
     ];
     protected static $remote_server_fields = [
+        'server_enabled',
         'host_ip',
         'username',
         'password',
@@ -42,7 +44,7 @@ class BBBControllerOptionsController extends Controller
        $timezone = new Timezone();
 
        $timezone_select = $timezone->selectForm(
-           'UTC',
+           config('bbbController.general_settings.timezone') ?? 'UTC',
            'Select a timezone',
            ['class' => 'form-control', 'name' => 'timezone']
        );
@@ -51,7 +53,9 @@ class BBBControllerOptionsController extends Controller
 
        $company_activities = CompanyActivity::all();
 
-       return view('bbb-controller.options',compact('timezone_select','countries','company_activities'));
+       $settings = config('bbbController');
+
+       return view('bbb-controller.options', compact('timezone_select', 'countries', 'company_activities', 'settings'));
    }
 
     /**
@@ -80,7 +84,7 @@ class BBBControllerOptionsController extends Controller
 
        } elseif ($request->has( 'server_form' )) {
 
-           if ($request->server_form == 'local') {
+           if ($request->server_form == 'localhost') {
                $this->form( $this::$local_server_fields );
 
            } elseif ($request->server_form == 'remote') {
@@ -120,7 +124,7 @@ class BBBControllerOptionsController extends Controller
                if ($value == 'logo-path') {
 
                    $logo = request()->file( 'logo-path' );
-                   $val = '/assets/img/brand/logo.' . $logo->getClientOriginalExtension();
+                   $val = '/assets/img/brand/logo';
                }
 
                $config = Configuration::where( 'config_key', '=', $value );

@@ -53,7 +53,7 @@ $(document).ready(function () {
             },
             password: {
                 required: "Please enter the user password",
-                rangelength: "The password length must be between {0} characters"
+                rangelength: "The password length must be between {0} and {1} characters"
             },
             confirm_password: {
                 equalTo: "The Confirm password not equal the password"
@@ -120,7 +120,7 @@ $(document).ready(function () {
         messages:{
             confirmPassword: {
                 required: "Please enter the new password",
-                rangelength: "The password length must be between {0} characters"
+                rangelength: "The password length must be between {0} and {1} characters"
             },
             confirmPassword: {
                 equalTo: "The Confirm password not equal the new password"
@@ -135,14 +135,13 @@ $(document).ready(function () {
                 rangelength: [3, 25],
             },
             'logo-path': {
-                required: true,
                 accept: "image/*"
             }
         },
         messages: {
             'company-name': {
                 required: "Please enter the company name",
-                rangelength: "The company name length must be between {0} characters"
+                rangelength: "The company name length must be between {0} and {1} characters"
             },
             'logo-path': {
                 required: "Please upload company logo",
