@@ -8,6 +8,8 @@ use BBBController\Service;
 class DashboardController extends Controller
 {
     function index(){
+
+
         $services = Service::all();
 
         return view('dashboard',compact('services'));
