@@ -16,4 +16,7 @@ cpu
 
 
 
+pidof ufw 1>/dev/null && echo "its runnin"  || echo "it's not running"
+
+
 

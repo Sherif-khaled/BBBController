@@ -1,5 +1,4 @@
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
     <div class="card">
         <div class="card-header" id="headingOne">
             <h4 class="mb-0 text-muted">

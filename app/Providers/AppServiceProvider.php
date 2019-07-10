@@ -4,6 +4,7 @@ namespace BBBController\Providers;
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use BBBController\Configuration;
+use BBBController\Operations\Commands;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -30,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+
         $configuration = Configuration::all(['config_key', 'config_value'])->keyBy('config_key')->transform(function ($settings) {
             return $settings->config_value;
         });

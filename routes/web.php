@@ -1,9 +1,14 @@
 <?php
 
-Route::get('test', function () {
-    $ssh = new \BBBController\Console\Shell\sshtest('34.73.146.199', 'root');
-    $ssh->connect();
-});
+Route::get( "test", function () {
+
+    $ff = new \BBBController\Operations\SSH();
+    $cmd = new \BBBController\Operations\Base\Commands();
+    $ff->connect();
+    $ff->execute( "bbb-conf --salt" );
+    dd( $ff );
+} );
+
 
 Route::group(['middleware' => ['dConfig']], function () {
     Route::get('/','DashboardController@index')->name('dashboard')->middleware('auth');
@@ -35,6 +40,7 @@ Route::group(['middleware' => ['dConfig']], function () {
     Route::get('/packages','BigbluebuttonPackagesController@index')->name('bbb.index');
 
     Route::get('/settings','BigbluebuttonSettingsController@index')->name('settings.index');
+    Route::post( '/settings', 'BigbluebuttonSettingsController@changeBranding' );
 
     //********************** Options *********************************
     Route::get('/options','BBBControllerOptionsController@index')->name('options.index');

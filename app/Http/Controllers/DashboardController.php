@@ -3,7 +3,10 @@
 namespace BBBController\Http\Controllers;
 
 use BBBController\Console\Shell\OSService;
+use BBBController\Operations\Base\Commands;
+use BBBController\Operations\SSH;
 use BBBController\Service;
+use Illuminate\Http\JsonResponse;
 
 class DashboardController extends Controller
 {
@@ -13,6 +16,27 @@ class DashboardController extends Controller
         $services = Service::all();
 
         return view('dashboard',compact('services'));
+    }
+
+    function getServicesStates()
+    {
+        $service_status = false;
+        if (config( 'bbbController.server.server_enabled' ) == 'localhost') {
+
+
+        } elseif (config( 'bbbController.server.server_enabled' ) == 'remote') {
+            $ssh = new SSH();
+            $cmd = new Commands( 'ufw' );
+            $ssh->connect();
+            $ssh->execute( $cmd->command->service->status );
+            if ($ssh == "true") {
+                $service_status = true;
+            } elseif ($ssh == "false") {
+                $service_status = false;
+            }
+
+        }
+        return $service_status;
     }
 
     function get_server_memory_usage(){
@@ -37,7 +61,7 @@ class DashboardController extends Controller
     /**
      * Change Service Status [Enable - Disable]
      * @param $id service ID
-     * @return $json
+     * @return JsonResponse $json
      */
     public function changeStates($id){
         $service = Service::find($id);
