@@ -13,50 +13,56 @@
                        aria-describedby="sharedHelp"
                        placeholder="Shared secret" value="">
             </div>
-            <div>
-                Mute all users on startup
-                <label id="muteUsersSwitch" class="switch">
-                    <input type="checkbox" id="chkMuteUsers" name="chkMuteUsers">
-                    <span class="slider"></span>
-                    <input type="hidden" id="chkMuteUsersHide" name="chkMuteUsersHide">
-
-                </label>
+            <div class="row">
+                <div class="col col-md-10">Mute all users on startup</div>
+                <div class="col col-md-2">
+                    <label id="muteUsersSwitch" class="switch">
+                        <input type="checkbox" id="chkMuteUsers" name="chkMuteUsers">
+                        <span class="slider"></span>
+                        <input type="hidden" id="chkMuteUsersHide" name="chkMuteUsersHide">
+                    </label>
+                </div>
             </div>
-            <div>
-                Enable background music when only one person is in a session
-                <label id="enableMusicSwitch" class="switch">
-                    <input type="checkbox" id="chkEnableMusic" name="chkEnableMusic">
-                    <span class="slider"></span>
-                    <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+            <div class="row">
+                <div class="col col-md-10">Enable background music when only one person is in a session</div>
+                <div class="col col-md-2">
+                    <label id="enableMusicSwitch" class="switch">
+                        <input type="checkbox" id="chkEnableMusic" name="chkEnableMusic" disabled>
+                        <span class="slider"></span>
+                        <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
 
-                </label>
+                    </label>
+                </div>
             </div>
-            <div>
-                Turn off the “comfort noise” when no one is speaking
-                <label id="comfortNoiceSwitch" class="switch">
-                    <input type="checkbox" id="chkComfortNoice" name="chkComfortNoice">
-                    <span class="slider"></span>
-                    <input type="hidden" id="chkComfortNoiceHide" name="chkComfortNoiceHide">
-
-                </label>
+            <div class="row">
+                <div class="col col-md-10">Turn off the “comfort noise” when no one is speaking</div>
+                <div class="col col-md-2">
+                    <label id="comfortNoiceSwitch" class="switch">
+                        <input type="checkbox" id="chkComfortNoice" name="chkComfortNoice">
+                        <span class="slider"></span>
+                        <input type="hidden" id="chkComfortNoiceHide" name="chkComfortNoiceHide">
+                    </label>
+                </div>
             </div>
-            <div>
-                Turn off “you are now muted”
-                <label id="mutedSwitch" class="switch">
-                    <input type="checkbox" id="chkMuted" name="chkMuted">
-                    <span class="slider"></span>
-                    <input type="hidden" id="chkMutedHide" name="chkMutedHide">
-
-                </label>
+            <div class="row">
+                <div class="col col-md-10">Turn off “you are now muted”</div>
+                <div class="col col-md-2">
+                    <label id="mutedSwitch" class="switch">
+                        <input type="checkbox" id="chkMuted" name="chkMuted">
+                        <span class="slider"></span>
+                        <input type="hidden" id="chkMutedHide" name="chkMutedHide">
+                    </label>
+                </div>
             </div>
-            <div>
-                Restrict webcam sharing to the presenter
-                <label id="restrictWebcamSwitch" class="switch">
-                    <input type="checkbox" id="chkRestrictWebcam" name="chkRestrictWebcam">
-                    <span class="slider"></span>
-                    <input type="hidden" id="chkRestrictWebcamHide" name="chkRestrictWebcamdHide">
-
-                </label>
+            <div class="row">
+                <div class="col col-md-10">Restrict webcam sharing to the presenter</div>
+                <div class="col col-md-2">
+                    <label id="restrictWebcamSwitch" class="switch">
+                        <input type="checkbox" id="chkRestrictWebcam" name="chkRestrictWebcam">
+                        <span class="slider"></span>
+                        <input type="hidden" id="chkRestrictWebcamHide" name="chkRestrictWebcamdHide">
+                    </label>
+                </div>
             </div>
         </div>
     </div>
@@ -125,30 +131,30 @@
         position: relative;
     }
 
-    #muteUsersSwitch {
-        left: 61%;
-        position: relative;
-    }
+    /*#muteUsersSwitch {*/
+    /*    left: 100%;*/
+    /*    position: absolute;*/
+    /*}*/
 
-    #comfortNoiceSwitch {
-        left: 30%;
-        position: relative;
-    }
+    /*#comfortNoiceSwitch {*/
+    /*    left: 30%;*/
+    /*    position: relative;*/
+    /*}*/
 
-    #mutedSwitch {
-        left: 57%;
-        position: relative;
-    }
+    /*#mutedSwitch {*/
+    /*    left: 57%;*/
+    /*    position: relative;*/
+    /*}*/
 
-    #enableMusicSwitch {
-        left: 17%;
-        position: relative;
-    }
+    /*#enableMusicSwitch {*/
+    /*    left: 17%;*/
+    /*    position: relative;*/
+    /*}*/
 
-    #restrictWebcamSwitch {
-        left: 43%;
-        position: relative;
-    }
+    /*#restrictWebcamSwitch {*/
+    /*    left: 43%;*/
+    /*    position: relative;*/
+    /*}*/
 
     .slider {
         position: absolute;

@@ -1,7 +1,5 @@
 @extends('layout.app')
 
-
-
 @section('content')
 
 
@@ -27,7 +25,7 @@
                     @include('bbb-settings.partial.bigbluebutton')
                 </div>
                 <div class="tab-pane fade" id="v-pills-html5" role="tabpanel" aria-labelledby="v-pills-html5-tab">
-                    {{--                    @include('bbb-controller.partial.server')--}}
+                    @include('bbb-settings.partial.html5')
                 </div>
                 <div class="tab-pane fade" id="v-pills-records" role="tabpanel"
                      aria-labelledby="v-pills-records-tab">...

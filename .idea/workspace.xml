@@ -2,43 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32f5f6b-fd1d-44ec-8960-a94684242822" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/administrator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Operations/Base/Commands.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Operations/Base/Parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Operations/Bigbluebutton/BigbluebuttonSettings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Operations/SSH.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/constants.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/bbb_settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/dist/ipInput.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/dist/ipInput.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/src/ipInput.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/src/ipInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/src/ipInput.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/IP-Input-Control-jQuery-ipInput/src/ipInput.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/bbb-settings/partial/html5.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Shell/OSService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Shell/OSService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Shell/commands" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Shell/commands" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Shell/sshtest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BigbluebuttonSettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BigbluebuttonSettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/img/brand/logo" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/brand/logo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GC/GC_PrivateKey.ppk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GC/GC_PublickKey.pub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GC/pr_test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GC/pr_test.ppk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GC/pu_test.pub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Operations/Bigbluebutton/BigbluebuttonSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Operations/Bigbluebutton/BigbluebuttonSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/server/partial/service_status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/server/partial/service_status.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,60 +35,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="221" column="40" selection-start-line="221" selection-start-column="24" selection-end-line="221" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BigbluebuttonSettingsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-              <folding>
-                <element signature="e#50#115#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Operations/SSH.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1236">
-              <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-              <folding>
-                <element signature="e#128#173#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Operations/Bigbluebutton/BigbluebuttonSettings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="86" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
-              <folding>
-                <element signature="e#60#93#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Blade" />
         <option value="blade" />
         <option value="JavaScript File" />
+        <option value="Blade" />
       </list>
     </option>
   </component>
@@ -159,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Records/RecordsBase.php" />
         <option value="$PROJECT_DIR$/app/Record.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/server/server_information.blade.php" />
@@ -198,18 +119,19 @@
         <option value="$PROJECT_DIR$/app/Console/Shell/commands" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/bbb_settings.js" />
         <option value="$PROJECT_DIR$/config/constants.php" />
         <option value="$PROJECT_DIR$/app/Operations/Base/Commands.php" />
         <option value="$PROJECT_DIR$/resources/views/server/partial/service_status.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Operations/SSH.php" />
-        <option value="$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BigbluebuttonSettingsController.php" />
         <option value="$PROJECT_DIR$/app/Operations/Bigbluebutton/BigbluebuttonSettings.php" />
+        <option value="$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/bbb-settings/partial/html5.blade.php" />
       </list>
     </option>
   </component>
@@ -416,6 +338,14 @@
               <item name="BBBController" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="bbb-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="partial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BBBController" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBBController" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="bbb-settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -573,6 +503,8 @@
       <workItem from="1562578989659" duration="17526000" />
       <workItem from="1562657338642" duration="19050000" />
       <workItem from="1562741979442" duration="19492000" />
+      <workItem from="1562857766382" duration="3246000" />
+      <workItem from="1562939304672" duration="12836000" />
     </task>
     <task id="LOCAL-00001" summary="Excuting Service">
       <created>1561685157596</created>
@@ -638,13 +570,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="659969000" />
+    <option name="totallyTimeSpent" value="676051000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1280" height="999" extended-state="6" />
+    <frame x="67" y="25" width="1533" height="875" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48789573" visible="true" weight="0.23581848" />
-      <window_info id="Structure" order="1" sideWeight="0.5121043" side_tool="true" weight="0.18291862" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48621553" visible="true" weight="0.1472764" />
+      <window_info id="Structure" order="1" sideWeight="0.51378447" side_tool="true" weight="0.1472764" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -658,7 +590,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998747" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5008104" side_tool="true" weight="0.32988507" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49918962" weight="0.31954023" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49918962" weight="0.31829575" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32998747" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -709,16 +641,6 @@
     </find-history>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-          <folding>
-            <element signature="e#33#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Concerns/InteractsWithInput.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5136">
@@ -737,13 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -929,20 +844,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/partial/server.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1272">
@@ -991,13 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/server/partial/service_status.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
@@ -1022,40 +916,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Operations/SSH.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="221" column="40" selection-start-line="221" selection-start-column="24" selection-end-line="221" selection-end-column="40" />
+        <state relative-caret-position="381">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#128#173#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BigbluebuttonSettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-          <folding>
-            <element signature="e#50#115#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="31">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Operations/Bigbluebutton/BigbluebuttonSettings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="86" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
-          <folding>
-            <element signature="e#60#93#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="387">
+          <caret line="73" column="94" selection-start-line="73" selection-start-column="84" selection-end-line="73" selection-end-column="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Operations/SSH.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/options.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1236">
-          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-          <folding>
-            <element signature="e#128#173#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="854">
+          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-controller/partial/general.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/settings.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/partial/html5.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="168" column="21" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bbb-settings/partial/bigbluebutton.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -62,8 +62,6 @@ class BigbluebuttonSettings
 
             $this->ssh->execute( "mv $src $dest" );
         }
-
-
     }
 
     //Enable background music when only one person is in a session
@@ -78,50 +76,42 @@ class BigbluebuttonSettings
             $this->changeValue( $new_value, $old_value, $this->files['freeswitch']['conference'] );
         }
     }
-
     //Turn off the “comfort noise” when no one is speaking
-
-    private function changeValue($value, $replace, $file)
-    {
-
-        /** @var Exepression $exp */
-        if ($value == null || $replace == null || $file == null) {
-            throw new Exception( sprintf( "%s Parameters Required", __FUNCTION__ ) );
-        }
-        $exp = "sed -i 's|$value|$replace|g' $file";
-
-        if ($this->ssh) {
-            $this->ssh->connect();
-
-            $this->ssh->execute( $exp );
-        }
-
-    }
-
-    //Increase the 200 page limit for uploads
-
     public function turn_off__comfort_noise($value)
     {
         $old_value = '<param name="comfort-noise" value="true"/>';
         $new_value = '<param name="comfort-noise" value="false"/>';
 
-        if ($value == true) {
-            $this->changeValue( $old_value, $new_value, $this->files['freeswitch']['conf-conference'] );
-        } elseif ($value == false) {
-            $this->changeValue( $new_value, $old_value, $this->files['freeswitch']['conf-conference'] );
+        switch ($value) {
+            case true:
+                $this->changeValue($old_value, $new_value, $this->files['freeswitch']['conf-conference']);
+                break;
+            case false:
+                $this->changeValue($new_value, $old_value, $this->files['freeswitch']['conf-conference']);
+                break;
         }
     }
 
-    //Restrict webcam sharing to the presenter
-
+    //Increase the 200 page limit for uploads
     public function increase_page_limit()
     {
 
     }
 
-    public function restrict_webcam_sharing()
+    //Restrict webcam sharing to the presenter
+    public function restrict_webcam_sharing($value)
     {
+        $old_value = 'presenterShareOnly="false"';
+        $new_value = 'presenterShareOnly="true"';
 
+        switch ($value) {
+            case true:
+                $this->changeValue($old_value, $new_value, $this->files['client']['config']);
+                break;
+            case false:
+                $this->changeValue($new_value, $old_value, $this->files['client']['config']);
+                break;
+        }
     }
 
     public function turn_off_you_are_now_muted($value)
@@ -129,10 +119,13 @@ class BigbluebuttonSettings
         $old_value = '<param name="muted-sound" value="conference/conf-muted.wav"/>';
         $new_value = '<!-- <param name="muted-sound" value="conference/conf-muted.wav"/> -->';
 
-        if ($value == true) {
-            $this->changeValue( $old_value, $new_value, $this->files['freeswitch']['conference'] );
-        } elseif ($value == false) {
-            $this->changeValue( $new_value, $old_value, $this->files['freeswitch']['conference'] );
+        switch ($value) {
+            case true:
+                $this->changeValue($old_value, $new_value, $this->files['freeswitch']['conference']);
+                break;
+            case false:
+                $this->changeValue($new_value, $old_value, $this->files['freeswitch']['conference']);
+                break;
         }
     }
 
@@ -141,10 +134,13 @@ class BigbluebuttonSettings
         $old_value = 'muteOnStart=false';
         $new_value = 'muteOnStart=true';
 
-        if ($value == true) {
-            $this->changeValue( $old_value, $new_value, $this->files['bbb-web']['bigbluebutton'] );
-        } elseif ($value == false) {
-            $this->changeValue( $new_value, $old_value, $this->files['bbb-web']['bigbluebutton'] );
+        switch ($value) {
+            case true:
+                $this->changeValue($old_value, $new_value, $this->files['bbb-web']['bigbluebutton']);
+                break;
+            case false:
+                $this->changeValue($new_value, $old_value, $this->files['bbb-web']['bigbluebutton']);
+                break;
         }
     }
 
@@ -205,6 +201,21 @@ class BigbluebuttonSettings
     public function change_the_locale()
     {
 
+    }
+
+    private function changeValue($value, $replace, $file)
+    {
+        /** @var Exepression $exp */
+        if ($value == null || $replace == null || $file == null) {
+            throw new Exception(sprintf("%s Parameters Required", __FUNCTION__));
+        }
+        $exp = "sed -i 's|$value|$replace|g' $file";
+
+        if ($this->ssh) {
+            $this->ssh->connect();
+
+            $this->ssh->execute($exp);
+        }
     }
 
 
