@@ -16,9 +16,9 @@
                     <div class="col col-md-10">Audio Chat Notification</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkChatNotification" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkChatNotificationHide" name="chkChatNotificationHide">
                         </label>
                     </div>
                 </div>
@@ -27,9 +27,9 @@
                     <div class="col col-md-10">Show Participants On Login</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkParticipantsOnLogin" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkParticipantsOnLoginHide" name="chkParticipantsOnLoginHide">
                         </label>
                     </div>
                 </div>
@@ -37,29 +37,29 @@
                     <div class="col col-md-10">Auto Join</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkAutoJoin" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkAutoJoinHide" name="chkAutoJoinHide">
                         </label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col col-md-10">listen Only Mode</div>
+                    <div class="col col-md-10">Listen Only Mode</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkListenOnlyMode" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkListenOnlyModeHide" name="chkListenOnlyModeHide">
                         </label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col col-md-10">force Listen Only</div>
+                    <div class="col col-md-10">Force Listen Only</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkForceListenOnly" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkForceListenOnlyHide" name="chkForceListenOnlyHide">
                         </label>
                     </div>
                 </div>
@@ -67,19 +67,19 @@
                     <div class="col col-md-10">Skip Check</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkSkipCheck" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkSkipCheckHide" name="chkSkipCheckHide">
                         </label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col col-md-10">lockOn Join</div>
+                    <div class="col col-md-10">LockOn Join</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkLockOnJoin" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkLockOnJoinHide" name="chkLockOnJoinHide">
                         </label>
                     </div>
                 </div>
@@ -87,9 +87,9 @@
                     <div class="col col-md-10">Ask For Feedback On Logout</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkFeedback" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkFeedbackHide" name="chkFeedbackHide">
                         </label>
                     </div>
                 </div>
@@ -97,9 +97,9 @@
                     <div class="col col-md-10">Allow User Lookup</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkAllowUserLookup" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkAllowUserLookupHide" name="chkAllowUserLookupHide">
                         </label>
                     </div>
                 </div>
@@ -107,9 +107,10 @@
                     <div class="col col-md-10">Enable Network Information</div>
                     <div class="col col-md-2">
                         <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableMusic" disabled>
+                            <input type="checkbox" id="" name="chkEnableNetworkInformation" disabled>
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableMusicHide" name="chkEnableMusicHide">
+                            <input type="hidden" id="chkEnableNetworkInformationHide"
+                                   name="chkEnableNetworkInformationHide">
                         </label>
                     </div>
                 </div>
@@ -128,8 +129,8 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label for="mobileFontSize">Desktop font size</label>
-                    <select id="mobileFontSize" name="mobileFontSize" class="form-control">
+                    <label for="desktopFontSize">Desktop font size</label>
+                    <select id="desktopFontSize" name="desktopFontSize" class="form-control">
                         <option>8</option>
                         <option>10</option>
                         <option>12</option>
@@ -141,23 +142,23 @@
             </div>
             <div class="tab-pane fade" id="nav-branding" role="tabpanel" aria-labelledby="nav-branding-tab">
                 <div class="form-group col-md-6">
-                    <label for="mobileFontSize">Application Name</label>
-                    <input type="text" name="" class="form-control">
+                    <label for="applicationName">Application Name</label>
+                    <input type="text" name="applicationName" class="form-control">
 
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="mobileFontSize">Client Title</label>
-                    <input type="text" name="" class="form-control">
+                    <label for="clientTitle">Client Title</label>
+                    <input type="text" name="clientTitle" class="form-control">
 
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="mobileFontSize">Copyright</label>
-                    <input type="text" name="" class="form-control">
+                    <label for="copyright">Copyright</label>
+                    <input type="text" name="copyright" class="form-control">
 
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="mobileFontSize">Help Link</label>
-                    <input type="text" name="" class="form-control">
+                    <label for="helpLink">Help Link</label>
+                    <input type="text" name="helpLink" class="form-control">
 
                 </div>
             </div>

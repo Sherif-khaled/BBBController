@@ -203,7 +203,7 @@ class BigbluebuttonSettings
 
     }
 
-    private function changeValue($value, $replace, $file)
+    protected function changeValue($value, $replace, $file)
     {
         /** @var Exepression $exp */
         if ($value == null || $replace == null || $file == null) {
