@@ -146,7 +146,8 @@ class BigbluebuttonSettings
 
     public function reduce_bandwidth_webcams()
     {
-
+//        https://github.com/bigbluebutton/bigbluebutton/issues/6801
+//        https://stackoverflow.com/questions/35296827/extracting-a-variables-value-from-text-file-using-bash
     }
 
     //HTML5 Settings

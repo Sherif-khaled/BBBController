@@ -15,8 +15,8 @@
                 <div class="row">
                     <div class="col col-md-10">Audio Chat Notification</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkChatNotification" disabled>
+                        <label id="chatNotificationSwitch" class="switch">
+                            <input type="checkbox" id="chkChatNotification" name="chkChatNotification">
                             <span class="slider"></span>
                             <input type="hidden" id="chkChatNotificationHide" name="chkChatNotificationHide">
                         </label>
@@ -26,8 +26,8 @@
                 <div class="row">
                     <div class="col col-md-10">Show Participants On Login</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkParticipantsOnLogin" disabled>
+                        <label id="participantsOnLoginSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkParticipantsOnLogin">
                             <span class="slider"></span>
                             <input type="hidden" id="chkParticipantsOnLoginHide" name="chkParticipantsOnLoginHide">
                         </label>
@@ -36,8 +36,8 @@
                 <div class="row">
                     <div class="col col-md-10">Auto Join</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkAutoJoin" disabled>
+                        <label id="autoJoinSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkAutoJoin">
                             <span class="slider"></span>
                             <input type="hidden" id="chkAutoJoinHide" name="chkAutoJoinHide">
                         </label>
@@ -46,8 +46,8 @@
                 <div class="row">
                     <div class="col col-md-10">Listen Only Mode</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkListenOnlyMode" disabled>
+                        <label id="listenOnlyModeSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkListenOnlyMode">
                             <span class="slider"></span>
                             <input type="hidden" id="chkListenOnlyModeHide" name="chkListenOnlyModeHide">
                         </label>
@@ -56,8 +56,8 @@
                 <div class="row">
                     <div class="col col-md-10">Force Listen Only</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkForceListenOnly" disabled>
+                        <label id="forceListenOnlySwitch" class="switch">
+                            <input type="checkbox" id="" name="chkForceListenOnly">
                             <span class="slider"></span>
                             <input type="hidden" id="chkForceListenOnlyHide" name="chkForceListenOnlyHide">
                         </label>
@@ -66,8 +66,8 @@
                 <div class="row">
                     <div class="col col-md-10">Skip Check</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkSkipCheck" disabled>
+                        <label id="skipCheckSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkSkipCheck">
                             <span class="slider"></span>
                             <input type="hidden" id="chkSkipCheckHide" name="chkSkipCheckHide">
                         </label>
@@ -76,8 +76,8 @@
                 <div class="row">
                     <div class="col col-md-10">LockOn Join</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkLockOnJoin" disabled>
+                        <label id="lockOnJoinSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkLockOnJoin">
                             <span class="slider"></span>
                             <input type="hidden" id="chkLockOnJoinHide" name="chkLockOnJoinHide">
                         </label>
@@ -86,8 +86,8 @@
                 <div class="row">
                     <div class="col col-md-10">Ask For Feedback On Logout</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkFeedback" disabled>
+                        <label id="feedbackSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkFeedback">
                             <span class="slider"></span>
                             <input type="hidden" id="chkFeedbackHide" name="chkFeedbackHide">
                         </label>
@@ -96,8 +96,8 @@
                 <div class="row">
                     <div class="col col-md-10">Allow User Lookup</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkAllowUserLookup" disabled>
+                        <label id="allowUserLookupSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkAllowUserLookup">
                             <span class="slider"></span>
                             <input type="hidden" id="chkAllowUserLookupHide" name="chkAllowUserLookupHide">
                         </label>
@@ -106,11 +106,11 @@
                 <div class="row">
                     <div class="col col-md-10">Enable Network Information</div>
                     <div class="col col-md-2">
-                        <label id="" class="switch">
-                            <input type="checkbox" id="" name="chkEnableNetworkInformation" disabled>
+                        <label id="enableNetworkInfoSwitch" class="switch">
+                            <input type="checkbox" id="" name="chkEnableNetworkInfo">
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableNetworkInformationHide"
-                                   name="chkEnableNetworkInformationHide">
+                            <input type="hidden" id="chkEnableNetworkInfoHide"
+                                   name="chkEnableNetworkInfoHide">
                         </label>
                     </div>
                 </div>
@@ -222,4 +222,89 @@
     .switch {
         transform: unset;
     }
+
+    #desktopFontSize {
+    }
+
+    /*******************************************************/
+
+    .slider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 30px;
+        box-shadow: 0 0 0 2px #777, 0 0 4px #777;
+        cursor: pointer;
+        border: 4px solid transparent;
+        overflow: hidden;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #777;
+        border-radius: 30px;
+        transform: translateX(-30px);
+        transition: .4s;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(30px);
+        background: limeGreen;
+    }
+
+    input:checked + .slider {
+        box-shadow: 0 0 0 2px limeGreen, 0 0 2px limeGreen;
+    }
+
+
+    /**************************/
+    .bg-dark {
+        background-color: #515151 !important;
+    }
+
+    .card-header {
+        color: white;
+    }
+
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+
 </style>
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('#chatNotificationSwitch').click(function () {
+                if ($('#chkChatNotification').is(':checked')) {
+                    $('#chkChatNotificationHide').val('true')
+                } else if ($('#chkChatNotification').is(":not(:checked)")) {
+                    $('#chkChatNotificationHide').val('false')
+                }
+            });
+        })
+    </script>
+@endsection
