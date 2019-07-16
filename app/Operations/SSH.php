@@ -48,7 +48,6 @@ class SSH extends Parameters
 
         if ($this->parameters->remote->key !== null) {
 
-
             $key = new  RSA();
 
             $key->loadKey( file_get_contents( $this->parameters->remote->key ) );
@@ -77,6 +76,8 @@ class SSH extends Parameters
 
             $key = new  RSA();
 
+            // $key->setPassword('Admin159#');
+
             $key->loadKey( file_get_contents( $this->parameters->remote->key ) );
 
             $connection = $sftp->login( $this->parameters->remote->user, $key );
@@ -92,6 +93,7 @@ class SSH extends Parameters
         }
 
         if (!$sftp->put( $remoteFile, $localFile, SFTP::SOURCE_LOCAL_FILE )) {
+            return response()->json( $sftp->nlist() );
             print_r( $sftp->nlist() );
             exit( 'Upload Failed' );
         }

@@ -116,14 +116,11 @@ class BBBControllerOptionsController extends Controller
            }
        }
        else{
-
            foreach ($values as $value) {
 
                $val = request( $value );
 
                if ($value == 'logo-path') {
-
-                   $logo = request()->file( 'logo-path' );
                    $val = '/assets/img/brand/logo';
                }
 

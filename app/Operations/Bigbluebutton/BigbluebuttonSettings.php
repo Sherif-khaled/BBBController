@@ -40,7 +40,7 @@ class BigbluebuttonSettings
     }
 
     //Bigbluebutton Settings
-    public function change__shared_secret($salt)
+    public function change_shared_secret($salt)
     {
 
     }

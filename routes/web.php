@@ -1,12 +1,18 @@
 <?php
 
+use BBBController\Operations\Base\Commands;
+use BBBController\Operations\Bigbluebutton\BigbluebuttonSettings;
+use BBBController\Operations\SSH;
+
 Route::get( "test", function () {
 
-    $ff = new \BBBController\Operations\SSH();
-    $cmd = new \BBBController\Operations\Base\Commands();
-    $ff->connect();
-    $ff->execute( "bbb-conf --salt" );
-    dd( $ff );
+    $ff = new SSH();
+    $cmd = new Commands();
+    $bbb = new BigbluebuttonSettings();
+    $bbb->turn_off_you_are_now_muted( false );
+    //$ff->connect();
+    // $ff->execute( "bbb-conf --salt" );
+    dd( $bbb );
 } );
 
 
@@ -40,7 +46,7 @@ Route::group(['middleware' => ['dConfig']], function () {
     Route::get('/packages','BigbluebuttonPackagesController@index')->name('bbb.index');
 
     Route::get('/settings','BigbluebuttonSettingsController@index')->name('settings.index');
-    Route::post( '/settings', 'BigbluebuttonSettingsController@changeBranding' );
+    Route::post( '/settings', 'BigbluebuttonSettingsController@changeSettings' );
 
     //********************** Options *********************************
     Route::get('/options','BBBControllerOptionsController@index')->name('options.index');

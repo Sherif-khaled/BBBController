@@ -2,10 +2,11 @@
 
 namespace BBBController\Http\Controllers;
 
-use Illuminate\Http\Request;
-use BBBController\Helpers\Converter;
 use BBBController\Helpers\CMD;
+use BBBController\Helpers\Converter;
 use DataTables;
+use DirectoryIterator;
+
 class RecordController extends Controller
 {
     public function __construct()
@@ -19,9 +20,9 @@ class RecordController extends Controller
 
         $records_path = base_path("tests/record/");
 
-        $dir = new \DirectoryIterator($records_path);
-        foreach ($dir as $fileinfo) {
-            if ($fileinfo->isDir() && !$fileinfo->isDot()) {
+        $dir = new DirectoryIterator( $records_path );
+        foreach ($dir as $file_info) {
+            if ($file_info->isDir() && !$file_info->isDot()) {
                 array_push($records,$dir->getFilename());
             }
         }

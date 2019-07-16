@@ -1,5 +1,5 @@
 <form id="generalfrm" role="form" name="generalfrm">
-    @csrf
+    @csrf()
     <div class="form-group">
         <input name="general_form" hidden>
         <label for="country">Country</label>

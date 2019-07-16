@@ -1,4 +1,7 @@
-<div class="row">
+<form id="html5frm" method="post" action="/settings" role="form" name="html5frm" enctype="multipart/form-data">
+    @csrf()
+    <input type="hidden" name="html5_form">
+    <div class="row">
     <div class="col-md-12">
         <nav>
             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -18,16 +21,16 @@
                         <label id="chatNotificationSwitch" class="switch">
                             <input type="checkbox" id="chkChatNotification" name="chkChatNotification">
                             <span class="slider"></span>
-                            <input type="hidden" id="chkChatNotificationHide" name="chkChatNotificationHide">
+
                         </label>
                     </div>
                 </div>
-
+                <input type="text" id="chkChatNotificationHide" name="chkChatNotificationHide">
                 <div class="row">
                     <div class="col col-md-10">Show Participants On Login</div>
                     <div class="col col-md-2">
                         <label id="participantsOnLoginSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkParticipantsOnLogin">
+                            <input type="checkbox" id="chkParticipantsOnLogin" name="chkParticipantsOnLogin">
                             <span class="slider"></span>
                             <input type="hidden" id="chkParticipantsOnLoginHide" name="chkParticipantsOnLoginHide">
                         </label>
@@ -37,7 +40,7 @@
                     <div class="col col-md-10">Auto Join</div>
                     <div class="col col-md-2">
                         <label id="autoJoinSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkAutoJoin">
+                            <input type="checkbox" id="chkAutoJoin" name="chkAutoJoin">
                             <span class="slider"></span>
                             <input type="hidden" id="chkAutoJoinHide" name="chkAutoJoinHide">
                         </label>
@@ -47,7 +50,7 @@
                     <div class="col col-md-10">Listen Only Mode</div>
                     <div class="col col-md-2">
                         <label id="listenOnlyModeSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkListenOnlyMode">
+                            <input type="checkbox" id="chkListenOnlyMode" name="chkListenOnlyMode">
                             <span class="slider"></span>
                             <input type="hidden" id="chkListenOnlyModeHide" name="chkListenOnlyModeHide">
                         </label>
@@ -57,7 +60,7 @@
                     <div class="col col-md-10">Force Listen Only</div>
                     <div class="col col-md-2">
                         <label id="forceListenOnlySwitch" class="switch">
-                            <input type="checkbox" id="" name="chkForceListenOnly">
+                            <input type="checkbox" id="chkForceListenOnly" name="chkForceListenOnly">
                             <span class="slider"></span>
                             <input type="hidden" id="chkForceListenOnlyHide" name="chkForceListenOnlyHide">
                         </label>
@@ -67,7 +70,7 @@
                     <div class="col col-md-10">Skip Check</div>
                     <div class="col col-md-2">
                         <label id="skipCheckSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkSkipCheck">
+                            <input type="checkbox" id="chkSkipCheck" name="chkSkipCheck">
                             <span class="slider"></span>
                             <input type="hidden" id="chkSkipCheckHide" name="chkSkipCheckHide">
                         </label>
@@ -77,7 +80,7 @@
                     <div class="col col-md-10">LockOn Join</div>
                     <div class="col col-md-2">
                         <label id="lockOnJoinSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkLockOnJoin">
+                            <input type="checkbox" id="chkLockOnJoin" name="chkLockOnJoin">
                             <span class="slider"></span>
                             <input type="hidden" id="chkLockOnJoinHide" name="chkLockOnJoinHide">
                         </label>
@@ -87,7 +90,7 @@
                     <div class="col col-md-10">Ask For Feedback On Logout</div>
                     <div class="col col-md-2">
                         <label id="feedbackSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkFeedback">
+                            <input type="checkbox" id="chkFeedback" name="chkFeedback">
                             <span class="slider"></span>
                             <input type="hidden" id="chkFeedbackHide" name="chkFeedbackHide">
                         </label>
@@ -97,7 +100,7 @@
                     <div class="col col-md-10">Allow User Lookup</div>
                     <div class="col col-md-2">
                         <label id="allowUserLookupSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkAllowUserLookup">
+                            <input type="checkbox" id="chkAllowUserLookup" name="chkAllowUserLookup">
                             <span class="slider"></span>
                             <input type="hidden" id="chkAllowUserLookupHide" name="chkAllowUserLookupHide">
                         </label>
@@ -107,10 +110,9 @@
                     <div class="col col-md-10">Enable Network Information</div>
                     <div class="col col-md-2">
                         <label id="enableNetworkInfoSwitch" class="switch">
-                            <input type="checkbox" id="" name="chkEnableNetworkInfo">
+                            <input type="checkbox" id="chkEnableNetworkInfo" name="chkEnableNetworkInfo">
                             <span class="slider"></span>
-                            <input type="hidden" id="chkEnableNetworkInfoHide"
-                                   name="chkEnableNetworkInfoHide">
+                            <input type="hidden" id="chkEnableNetworkInfoHide" name="chkEnableNetworkInfoHide">
                         </label>
                     </div>
                 </div>
@@ -163,18 +165,14 @@
                 </div>
             </div>
         </div>
+        <input type="submit" name="submit" value="Save Settings" class="btn btn-primary btn-lg">
     </div>
 </div>
-
+</form>
 <style>
     .tab-content {
         background-color: white;
         padding: 3%;
-    }
-
-    .project-tab {
-        padding: 10%;
-        margin-top: -8%;
     }
 
     .project-tab #tabs {
@@ -264,18 +262,6 @@
 
 
     /**************************/
-    .bg-dark {
-        background-color: #515151 !important;
-    }
-
-    .card-header {
-        color: white;
-    }
-
-    .btn-file {
-        position: relative;
-        overflow: hidden;
-    }
 
     .btn-file input[type=file] {
         position: absolute;
@@ -295,9 +281,10 @@
 
 </style>
 
-@section('script')
+{{--@section('script')--}}
     <script>
         $(document).ready(function () {
+
             $('#chatNotificationSwitch').click(function () {
                 if ($('#chkChatNotification').is(':checked')) {
                     $('#chkChatNotificationHide').val('true')
@@ -305,6 +292,78 @@
                     $('#chkChatNotificationHide').val('false')
                 }
             });
+
+            $('#participantsOnLoginSwitch').click(function () {
+                if ($('#chkParticipantsOnLogin').is(':checked')) {
+                    $('#chkParticipantsOnLoginHide').val('true')
+                } else if ($('#chkParticipantsOnLogin').is(":not(:checked)")) {
+                    $('#chkParticipantsOnLoginHide').val('false')
+                }
+            });
+
+            $('#autoJoinSwitch').click(function () {
+                if ($('#chkAutoJoin').is(':checked')) {
+                    $('#chkAutoJoinHide').val('true')
+                } else if ($('#chkAutoJoin').is(":not(:checked)")) {
+                    $('#chkAutoJoinHide').val('false')
+                }
+            });
+
+            $('#listenOnlyModeSwitch').click(function () {
+                if ($('#chkListenOnlyMode').is(':checked')) {
+                    $('#chkListenOnlyModeHide').val('true')
+                } else if ($('#chkListenOnlyMode').is(":not(:checked)")) {
+                    $('#chkListenOnlyModeHide').val('false')
+                }
+            });
+
+            $('#forceListenOnlySwitch').click(function () {
+                if ($('#chkForceListenOnly').is(':checked')) {
+                    $('#chkForceListenOnlyHide').val('true')
+                } else if ($('#chkForceListenOnly').is(":not(:checked)")) {
+                    $('#chkForceListenOnlyHide').val('false')
+                }
+            });
+
+            $('#skipCheckSwitch').click(function () {
+                if ($('#chkSkipCheck').is(':checked')) {
+                    $('#chkSkipCheckHide').val('true')
+                } else if ($('#chkSkipCheck').is(":not(:checked)")) {
+                    $('#chkSkipCheckHide').val('false')
+                }
+            });
+
+            $('#lockOnJoinSwitch').click(function () {
+                if ($('#chkLockOnJoin').is(':checked')) {
+                    $('#chkLockOnJoinHide').val('true')
+                } else if ($('#chkLockOnJoin').is(":not(:checked)")) {
+                    $('#chkLockOnJoinHide').val('false')
+                }
+            });
+
+            $('#feedbackSwitch').click(function () {
+                if ($('#chkFeedback').is(':checked')) {
+                    $('#chkFeedbackHide').val('true')
+                } else if ($('#chkFeedback').is(":not(:checked)")) {
+                    $('#chkFeedbackHide').val('false')
+                }
+            });
+
+            $('#allowUserLookupSwitch').click(function () {
+                if ($('#chkAllowUserLookup').is(':checked')) {
+                    $('#chkAllowUserLookupHide').val('true')
+                } else if ($('#chkAllowUserLookup').is(":not(:checked)")) {
+                    $('#chkAllowUserLookupHide').val('false')
+                }
+            });
+
+            $('#enableNetworkInfoSwitch').click(function () {
+                if ($('#chkEnableNetworkInfo').is(':checked')) {
+                    $('#chkEnableNetworkInfoHide').val('true')
+                } else if ($('#chkEnableNetworkInfo').is(":not(:checked)")) {
+                    $('#chkEnableNetworkInfoHide').val('false')
+                }
+            });
         })
     </script>
-@endsection
+{{--@endsection--}}

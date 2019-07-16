@@ -2,7 +2,7 @@
 
 namespace BBBController\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Renderable as RenderableAlias;
 
 class HomeController extends Controller
 {
@@ -19,7 +19,7 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return RenderableAlias
      */
     public function index()
     {

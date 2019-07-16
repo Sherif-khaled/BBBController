@@ -1,4 +1,5 @@
 <form id="serverfrm" name="serverfrm" role="form">
+    @csrf()
     <input type="text" value="" id="server_form" name="server_form" hidden>
 
     <div class="custom-control custom-radio custom-control-inline">
@@ -89,14 +90,17 @@
 <script>
 
     if ($('#r_server').is(':checked')) {
+        $('#remote').show()
+        $('#local').hide();
+        $('#server_form').val('remote');
 
     } else {
         $('#remote').hide()
         $('#local').show();
+        $('#server_form').val('localhost');
+
     }
     $('input[type=radio][name=server_enabled]').on('change', function () {
-
-        // $(this).closest('form').find("input[type=text], input[type=password]").val("");
 
         $('#server_form').trigger('reset');
 

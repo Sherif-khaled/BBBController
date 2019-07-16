@@ -1,0 +1,38 @@
+bigbluebutton Settings
+==========================
+Finshed
+-------------
+- Mute all users on startup
+- Turn off the “comfort noise” when no one is speaking
+- Turn off “you are now muted”
+
+On Progress
+-------------
+- Enable background music when only one person is in a session
+  notes(not set value and we need to allow upload WAV file)
+
+ Under Test
+ -----------
+ - Restrict webcam sharing to the presenter
+   note(i cant't found the value in origenal file)
+
+ HTML5 Settings
+ ==========================
+ Finshed
+ -------------
+- Audio Chat Notification
+- forceListenOnly
+- skipCheck
+- Allow User Lookup
+- Enable Network Information
+ On Progress
+ -------------
+- showParticipantsOnLogin
+- Ask For Feedback On Logout
+- LockOn Join
+-Listen Only Mode
+
+
+  Under Test
+  -----------
+- Auto Join

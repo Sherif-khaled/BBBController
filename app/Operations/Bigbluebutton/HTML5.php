@@ -121,8 +121,8 @@ class HTML5 extends BigbluebuttonSettings
 
     public function askForFeedbackOnLogout($value)
     {
-        $old_value = 'listenOnlyMode: true';
-        $new_value = 'listenOnlyMode: false';
+        $old_value = 'askForFeedbackOnLogout: true';
+        $new_value = 'askForFeedbackOnLogout: false';
 
         switch ($value) {
             case true:
@@ -136,8 +136,8 @@ class HTML5 extends BigbluebuttonSettings
 
     public function allowUserLookup($value)
     {
-        $old_value = 'listenOnlyMode: true';
-        $new_value = 'listenOnlyMode: false';
+        $old_value = 'allowUserLookup: false';
+        $new_value = 'allowUserLookup: true';
 
         switch ($value) {
             case true:
@@ -151,8 +151,8 @@ class HTML5 extends BigbluebuttonSettings
 
     public function enableNetworkInformation($value)
     {
-        $old_value = 'listenOnlyMode: true';
-        $new_value = 'listenOnlyMode: false';
+        $old_value = 'enableNetworkInformation: false';
+        $new_value = 'enableNetworkInformation: true';
 
         switch ($value) {
             case true:

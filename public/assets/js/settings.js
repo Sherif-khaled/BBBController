@@ -67,7 +67,7 @@ $(document).ready(function () {
 
     })
 
-})
+});
 
 function localServerValidate() {
     $('#serverfrm').validate({

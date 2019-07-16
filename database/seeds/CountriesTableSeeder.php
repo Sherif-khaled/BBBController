@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use BBBController\Country;
+use Illuminate\Database\Seeder;
+
 class CountriesTableSeeder extends Seeder
 {
     /**
@@ -133,7 +134,7 @@ class CountriesTableSeeder extends Seeder
                 'iso' => 'BR',
             ],
             [
-                'name' => 'British lndian Ocean Territory',
+                'name' => 'British lydian Ocean Territory',
                 'iso' => 'IO',
             ],
             [

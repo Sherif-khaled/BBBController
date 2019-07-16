@@ -27,7 +27,7 @@
                    value="{{config('bbbController.branding.logo-path')}}">
         </div>
         <img src="{{asset(config('bbbController.branding.logo-path'))}}"
-             class="img-thumbnail img-responsive fluid-image img-rounded" id='img-upload'/>
+             class="img-thumbnail img-responsive fluid-image img-rounded" id='img-upload' alt="dd"/>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
@@ -63,14 +63,14 @@
     <script>
         $(document).ready( function() {
             $(document).on('change', '.btn-file :file', function() {
-                var input = $(this),
+                let input = $(this),
                     label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
                 input.trigger('fileselect', [label]);
             });
 
             $('.btn-file :file').on('fileselect', function(event, label) {
 
-                var input = $(this).parents('.input-group').find(':text'),
+                let input = $(this).parents('.input-group').find(':text'),
                     log = label;
 
                 if( input.length ) {
@@ -82,11 +82,11 @@
             });
             function readURL(input) {
                 if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+                    let reader = new FileReader();
 
                     reader.onload = function (e) {
                         $('#img-upload').attr('src', e.target.result);
-                    }
+                    };
 
                     reader.readAsDataURL(input.files[0]);
                 }
