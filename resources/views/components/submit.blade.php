@@ -1,0 +1,6 @@
+@extends('')
+
+@section('content')
+
+
+@endsection
