@@ -11,3 +11,13 @@ function getBase64Image(url, callback) {
         request.responseType = 'blob';
         request.send();
 }
+function proccesingLoader($enable){
+    if($enable == true){
+        $('.loader').attr('hidden',false);
+        $('.cust-btn').attr('disabled',true)
+    }else if($enable == false){
+        $('.loader').attr('hidden',true);
+        $('.cust-btn').attr('disabled',false)
+    }
+
+}

@@ -4,6 +4,7 @@ namespace BBBController\Http\Controllers {
 
     use BBBController\Operations\Bigbluebutton\BigbluebuttonSettings;
     use BBBController\Operations\Bigbluebutton\HTML5;
+    use BBBController\Operations\SSH;
     use Illuminate\Http\Request;
 
     class BigbluebuttonSettingsController extends Controller
@@ -67,6 +68,9 @@ namespace BBBController\Http\Controllers {
             } elseif ($request->has( 'html5_form' )) {
 
                 $html5 = new HTML5();
+
+                $d=new SSH();
+                if($d->connectionStatus());
 
                 if ($request->get( 'chkChatNotificationHide' ) == 'true') {
                     $html5->enableAudioChatNotification( true );

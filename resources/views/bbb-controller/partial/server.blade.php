@@ -2,24 +2,26 @@
     @csrf()
     <input type="text" value="" id="server_form" name="server_form" hidden>
 
-    <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio"
-               {{config('bbbController.server.server_enabled') == 'localhost' ? 'checked' : ''}} value="localhost"
-               class="custom-control-input" id="l_server" name="server_enabled">
-        <label class="custom-control-label" for="l_server">Localhost</label>
-    </div>
+    <div class="pb-4">
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio"
+                   {{config('bbbController.server.server_enabled') == 'localhost' ? 'checked' : ''}} value="localhost"
+                   class="custom-control-input" id="l_server" name="server_enabled">
+            <label class="custom-control-label" for="l_server">Localhost</label>
+        </div>
 
-    <!-- Default inline 2-->
-    <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio"
-               {{config('bbbController.server.server_enabled') == 'remote' ? 'checked' : ''}} value="remote"
-               class="custom-control-input" id="r_server" name="server_enabled">
-        <label class="custom-control-label" for="r_server">Remote Server</label>
+        <!-- Default inline 2-->
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio"
+                   {{config('bbbController.server.server_enabled') == 'remote' ? 'checked' : ''}} value="remote"
+                   class="custom-control-input" id="r_server" name="server_enabled">
+            <label class="custom-control-label" for="r_server">Remote Server</label>
+        </div>
     </div>
 
     <div id="local" class="card">
         <div class="card-header">
-            <h3 class="text-muted">Localhost</h3>
+            <h6 class="text-muted">Localhost</h6>
         </div>
         <div class="card-body">
 
@@ -40,7 +42,7 @@
 
     <div id="remote" class="card">
         <div class="card-header">
-            <h3 class="text-muted">Remote Server</h3>
+            <h6 class="text-muted">Remote Server</h6>
         </div>
         <div class="card-body">
 
@@ -83,7 +85,10 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-lg btn-primary">Save Settings</button>
+    <div class="pt-4">
+        <button type="submit" class="btn btn-primary btn-lg">Save Settings</button>
+
+    </div>
 
 </form>
 

@@ -7,12 +7,8 @@ use BBBController\Operations\SSH;
 Route::get( "test", function () {
 
     $ff = new SSH();
-    $cmd = new Commands();
-    $bbb = new BigbluebuttonSettings();
-    $bbb->turn_off_you_are_now_muted( false );
-    //$ff->connect();
-    // $ff->execute( "bbb-conf --salt" );
-    dd( $bbb );
+    $ff->connectionStatus();
+    dd( $ff );
 } );
 
 

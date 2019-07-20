@@ -14,6 +14,7 @@
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
+
             <div class="tab-pane fade show active" id="nav-general" role="tabpanel" aria-labelledby="nav-general-tab">
                 <div class="row">
                     <div class="col col-md-10">Audio Chat Notification</div>
@@ -21,12 +22,12 @@
                         <label id="chatNotificationSwitch" class="switch">
                             <input type="checkbox" id="chkChatNotification" name="chkChatNotification">
                             <span class="slider"></span>
-
+                            <input type="hidden" id="chkChatNotificationHide" name="chkChatNotificationHide">
                         </label>
                     </div>
                 </div>
-                <input type="text" id="chkChatNotificationHide" name="chkChatNotificationHide">
                 <div class="row">
+
                     <div class="col col-md-10">Show Participants On Login</div>
                     <div class="col col-md-2">
                         <label id="participantsOnLoginSwitch" class="switch">
@@ -36,6 +37,7 @@
                         </label>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col col-md-10">Auto Join</div>
                     <div class="col col-md-2">
@@ -165,7 +167,8 @@
                 </div>
             </div>
         </div>
-        <input type="submit" name="submit" value="Save Settings" class="btn btn-primary btn-lg">
+        @include('components.submit')
+{{--        <input type="submit" name="submit" value="Save Settings" class="btn btn-primary btn-lg">--}}
     </div>
 </div>
 </form>

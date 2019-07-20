@@ -4,36 +4,6 @@
 
 @section('content')
 
-
-    {{--<div class="row w-100 d-flex justify-content-center">--}}
-    {{--    <div class="col-sm-8">--}}
-    {{--        <div class="card">--}}
-    {{--            <div class="card-header">--}}
-    {{--                Branding Settings--}}
-    {{--            </div>--}}
-    {{--            <div class="card-body">--}}
-    {{--                @include('bbb-controller.partial.branding')--}}
-
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-    {{--</div>--}}
-
-
-    {{--<div class="row w-100 d-flex justify-content-center" style="margin-top: 20px;">--}}
-    {{--    <div class="col-sm-8">--}}
-    {{--        <div class="card">--}}
-    {{--            <div class="card-header">--}}
-    {{--                General Settings--}}
-    {{--            </div>--}}
-    {{--            <div class="card-body">--}}
-    {{--                @include('bbb-controller.partial.general')--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-    {{--</div>--}}
-
-
     <div class="row col-12 constant">
         <div class="col-3">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -47,7 +17,7 @@
                    aria-controls="v-pills-general" aria-selected="false">General Settings</a>
             </div>
         </div>
-        <div class="col-9">
+        <div class="col-md-6">
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-branding" role="tabpanel"
                      aria-labelledby="v-pills-branding-tab">

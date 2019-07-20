@@ -1,4 +1,6 @@
-let pass_html
+import $ from "../vendor/onscreen/dist/on-screen.es6";
+
+let pass_html;
 $(document).ready(function () {
     $('#frmChangePassword').submit(function (e) {
         e.preventDefault();
@@ -43,7 +45,7 @@ $(document).ready(function () {
          $('#prof_gender').html('<i class="fa fa-venus-mars"></i> ' + data.user.gender);
          $('#prof_country').html(data.country.name);
          if (!$.trim(data.user.image)) {
-             if (data.user.gender != 'Male') {
+             if (data.user.gender !== 'Male') {
                  getBase64Image(assetsURL + 'female.png', function (base64) {
                      $('#detailsAvatar').attr('src', base64);
                  });
@@ -74,7 +76,7 @@ $(document).ready(function () {
 
     /* When click create user */
     $('#createUser').click(function () {
-        $("#modalUserForm").on('show.bs.modal', function(e){
+        $("#modalUserForm").on('show.bs.modal', function(){
             if($('#password').length === 0){
                 $('#pass_block').append(pass_html);
             }
@@ -82,10 +84,10 @@ $(document).ready(function () {
         $('#ModalUserTitle').html('Create New User');
         $('#frmUser').trigger('reset');
         $('#modalUserForm').modal('show');
-    })
+    });
 
     /* When click edit user */
-    let user_id
+    let user_id;
     $('body').on('click', '#editUser', function () {
         //change modal title
         $('#ModalUserTitle').html('Edit User');

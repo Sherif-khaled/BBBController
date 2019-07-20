@@ -26,6 +26,7 @@
 
     <!-- Input Mask CSS -->
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
@@ -125,15 +126,22 @@
     <!-- Header -->
     <div class="header bg-gradient-primary" style="padding-bottom: 100px">
 
+    </div>
+    @if(Session::has('ssh'))
+    <div class="alert alert-success" role="alert">
+        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    @endif
+    <div style="width: 50px ;padding: 30px">
 
     </div>
 
-    <div style="width: 50px ;padding: 30px"></div>
-
     <!-- Page content -->
     <div class="container-fluid mb--50">
+
         <div class="row justify-content-center">
 @include('layout.alert')
+
 
 
             <div>

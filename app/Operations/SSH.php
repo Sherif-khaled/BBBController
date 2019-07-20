@@ -18,6 +18,7 @@ class SSH extends Parameters
 {
 
     private $SSH_Connection;
+    private  $connection_status;
 
     public function __construct()
     {
@@ -56,10 +57,18 @@ class SSH extends Parameters
         } elseif ($this->parameters->remote->key == null && $this->parameters->remote->password !== null) {
 
 
-            $this->SSH_Connection->login( $this->parameters->remote->user, $this->parameters->remote->password );
+           $this->connection_status =  $this->SSH_Connection->login( $this->parameters->remote->user, $this->parameters->remote->password );
         }
 
 
+    }
+    public function connectionStatus(){
+        if(!$this->connection_status){
+           session(['ssh' => 'The Connection between client and remote server is closed']);
+        }else{
+            session(['ssh' => "You are now connected to $this->host server"]);
+
+        }
     }
 
     public function execute($cmd)

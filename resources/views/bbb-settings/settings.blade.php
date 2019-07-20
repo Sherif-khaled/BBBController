@@ -18,11 +18,14 @@
                    aria-controls="v-pills-advanced" aria-selected="false">Advanced Settings</a>
             </div>
         </div>
+
         <div class="col-9">
+
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-bigbluebutton" role="tabpanel"
                      aria-labelledby="v-pills-bigbluebutton-tab">
                     @include('bbb-settings.partial.bigbluebutton')
+
                 </div>
                 <div class="tab-pane fade" id="v-pills-html5" role="tabpanel" aria-labelledby="v-pills-html5-tab">
                     @include('bbb-settings.partial.html5')

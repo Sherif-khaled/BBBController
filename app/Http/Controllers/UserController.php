@@ -53,7 +53,7 @@ class UserController extends Controller
         $user = User::where('id','=',$id)->first();
         $countries = Country::all();
         $gender = ['Male','Female','Other'];
-        return view( 'users.profile', compact( ['user' => $user, 'countries' => $countries, 'gender' => $gender] ) );
+        return view( 'users.profile', compact( ['user', 'countries', 'gender'] ) );
     }
 
     public function details($id){

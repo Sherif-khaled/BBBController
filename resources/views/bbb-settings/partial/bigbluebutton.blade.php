@@ -110,9 +110,10 @@
 
         </div>
     </div>
+    <div class="pt-4">
+        <button type="submit" class="btn btn-primary btn-lg">Save Settings</button>
+    </div>
 
-
-    <button type="submit" class="btn btn-primary">Save Settings</button>
 </form>
 
 
