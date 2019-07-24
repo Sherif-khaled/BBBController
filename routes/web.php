@@ -4,17 +4,16 @@ use BBBController\Operations\Base\Commands;
 use BBBController\Operations\Bigbluebutton\BigbluebuttonSettings;
 use BBBController\Operations\SSH;
 
-Route::get( "test", function () {
+//
 
-    $ff = new SSH();
-    $ff->connectionStatus();
-    dd( $ff );
-} );
 
 
 Route::group(['middleware' => ['dConfig']], function () {
     Route::get('/','DashboardController@index')->name('dashboard')->middleware('auth');
     Route::post('/changestatus/{id}','DashboardController@changeStates')->middleware('auth');
+
+    Route::get('/checkserver','DashboardController@checkRemoteServer');
+
 
 
     Auth::routes();

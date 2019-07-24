@@ -1,4 +1,4 @@
-import $ from "../vendor/onscreen/dist/on-screen.es6";
+// import $ from "../vendor/onscreen/dist/on-screen.es6";
 
 let pass_html;
 $(document).ready(function () {

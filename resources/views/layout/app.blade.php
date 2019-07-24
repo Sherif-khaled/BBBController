@@ -51,6 +51,8 @@
     <script src="{{ asset('assets/js/users.js') }}"></script>
     <script src="{{ asset('assets/js/settings.js') }}"></script>
     <script src="{{ asset('assets/js/helper.js') }}"></script>
+    <script src="{{asset('assets/js/worker.js')}}"></script>
+
 
 
 
@@ -127,11 +129,10 @@
     <div class="header bg-gradient-primary" style="padding-bottom: 100px">
 
     </div>
-    @if(Session::has('ssh'))
-    <div class="alert alert-success" role="alert">
-        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+
+    <div id="serverStatus" class="alert " role="alert">
     </div>
-    @endif
+
     <div style="width: 50px ;padding: 30px">
 
     </div>

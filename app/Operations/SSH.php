@@ -10,6 +10,7 @@ namespace BBBController\Operations;
 include base_path() . '/vendor/autoload.php';
 
 use BBBController\Operations\Base\Parameters;
+use Exception;
 use phpseclib\Crypt\RSA;
 use phpseclib\Net\SFTP;
 use phpseclib\Net\SSH2;
@@ -17,12 +18,17 @@ use phpseclib\Net\SSH2;
 class SSH extends Parameters
 {
 
-    private $SSH_Connection;
-    private  $connection_status;
+    public static $SSH_Connection;
+    public static $instances = 0;
+    private static $paramaeter;
 
     public function __construct()
     {
+        self::$instances++;
+
         parent::__construct();
+
+        self::$paramaeter = $this->parameters;
 
         if ($this->server_type == "remote") {
             $this->host = $this->parameters->remote->host;
@@ -41,11 +47,13 @@ class SSH extends Parameters
 
         }
 
+        self::$SSH_Connection = new SSH2( $this->parameters->remote->host);
+        self::$SSH_Connection->setTimeout(1);
+
     }
 
     public function connect()
     {
-        $this->SSH_Connection = new SSH2( $this->parameters->remote->host );
 
         if ($this->parameters->remote->key !== null) {
 
@@ -53,22 +61,52 @@ class SSH extends Parameters
 
             $key->loadKey( file_get_contents( $this->parameters->remote->key ) );
 
-            $this->SSH_Connection->login( $this->parameters->remote->user, $key );
+            self::$SSH_Connection->login( $this->parameters->remote->user, $key );
         } elseif ($this->parameters->remote->key == null && $this->parameters->remote->password !== null) {
 
 
-           $this->connection_status =  $this->SSH_Connection->login( $this->parameters->remote->user, $this->parameters->remote->password );
+           self::$SSH_Connection->login( $this->parameters->remote->user, $this->parameters->remote->password );
         }
 
 
     }
-    public function connectionStatus(){
-        if(!$this->connection_status){
-           session(['ssh' => 'The Connection between client and remote server is closed']);
-        }else{
-            session(['ssh' => "You are now connected to $this->host server"]);
+    public static function  serverAlive()
+    {
+        exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg(self::$paramaeter->remote->host)), $res, $rval);
+        return $rval === 0 ? true : false;
+    }
+
+    public function checkSSHPort(){
+        try{
+            $fsock = @fsockopen($this->parameters->remote->host, 22, $errno, $errstr, 1);
+            stream_set_blocking($fsock,false);
+
+            if (!$fsock) {
+                fclose($fsock);
+                return false;
+            } else {
+                fclose($fsock);
+                return true;
+            }
+
+        }catch (Exception $e) {
+            return false;
 
         }
+    }
+    public static function isConnected(){
+
+        if(!self::$SSH_Connection->isConnected()){
+            return false;
+        }
+        return true;
+    }
+    public static function isAuthenticated(){
+
+        if(!self::$SSH_Connection->isAuthenticated()){
+            return false;
+        }
+        return true;
     }
 
     public function execute($cmd)
@@ -103,11 +141,13 @@ class SSH extends Parameters
 
         if (!$sftp->put( $remoteFile, $localFile, SFTP::SOURCE_LOCAL_FILE )) {
             return response()->json( $sftp->nlist() );
-            print_r( $sftp->nlist() );
             exit( 'Upload Failed' );
         }
 
-
     }
+    public function closeSession(){
+        self::$SSH_Connection->disconnect();
+    }
+
 
 }

@@ -3,12 +3,11 @@
 
 namespace BBBController\Operations\Base;
 
+use phpDocumentor\Reflection\Types\Static_;
 use stdClass;
 
 class Parameters
 {
-    public $parameters;
-
 
     public $server_type;
 

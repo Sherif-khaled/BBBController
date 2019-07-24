@@ -84,5 +84,28 @@ class DashboardController extends Controller
 
         return response()->json(['success'=>'Service status changed successfully.']);
     }
+    public function checkRemoteServer(){
+
+        $alive =  SSH::serverAlive();
+        if(!$alive){
+            $msg = "Unable to connect to the remote server.";
+           return response()->json(["not_responding" => $msg]);
+        }
+
+        $connected =  SSH::isConnected();
+        if(!$connected){
+            $msg = "SSH port 22 connection refused.";
+            return response()->json(["port_refused" => $msg]);
+        }
+
+        $authenticated =  SSH::isAuthenticated();
+        if(!$authenticated){
+            $msg = "SSH connection authentication failure.";
+            return response()->json(["authentication_failure" => $msg]);
+        }
+        $msg = "you are now connected to remote server successfully.";
+        return response()->json(["success" => $msg]);
+
+    }
 
 }
