@@ -31,11 +31,11 @@ class UserController extends Controller
         try {
             $datatable = Datatables::of( $users )->addColumn( 'action', function ($row) {
 
-                $btn = '<a href="javascript:void(0)" id="detailsUser"  data-id="' . $row->id . '" class="btn btn-info btn-md detailsUser">Details</a>';
+                $btn = '<a href="javascript:void(0)" id="detailsUser"  data-id="' . $row->id . '" class="btn btn-info btn-sm detailsUser">Details</a>';
 
-                $btn = $btn . '<a href="javascript:void(0)" id="editUser" data-id="' . $row->id . '" class="btn btn-primary btn-md">Edit</a>';
+                $btn = $btn . '<a href="javascript:void(0)" id="editUser" data-id="' . $row->id . '" class="btn btn-primary btn-sm">Edit</a>';
 
-                $btn = $btn . '<a href="javascript:void(0)" id="delUser" data-toggle="modal" data-target="#confirm_modal"  data-id="' . $row->id . '" data-original-title="Delete" class="btn btn-danger btn-md">Delete</a> ';
+                $btn = $btn . '<a href="javascript:void(0)" id="delUser" data-toggle="modal" data-target="#confirm_modal"  data-id="' . $row->id . '" data-original-title="Delete" class="btn btn-danger btn-sm">Delete</a> ';
 
 
                 return $btn;

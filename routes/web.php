@@ -1,11 +1,5 @@
 <?php
 
-use BBBController\Operations\Base\Commands;
-use BBBController\Operations\Bigbluebutton\BigbluebuttonSettings;
-use BBBController\Operations\SSH;
-
-//
-
 
 
 Route::group(['middleware' => ['dConfig']], function () {
@@ -46,6 +40,18 @@ Route::group(['middleware' => ['dConfig']], function () {
     //********************** Options *********************************
     Route::get('/options','BBBControllerOptionsController@index')->name('options.index');
     Route::post('/options','BBBControllerOptionsController@save')->name('options.save');
+
+    //********************** Development *********************************
+    Route::get( '/development', 'DevelopmentController@index' )->name( 'development.index' );
+    Route::get( '/getroles', 'Development\RoleController@getRoles' )->name( 'development.roles.getroles' );
+    Route::post( '/roles', 'Development\RoleController@store' )->name( 'development.roles.save' );
+    Route::get( '/roles/{id}/edit', 'Development\RoleController@edit' )->name( 'development.roles.edit' );
+    Route::post( '/roles/{id}', 'Development\RoleController@destroy' )->name( 'development.roles.destroy' );
+
+    Route::get( '/getpermissions', 'Development\PermissionController@getPermissions' )->name( 'development.permissions.getpermissions' );
+    Route::post( '/permissions', 'Development\PermissionController@store' )->name( 'development.permissions.save' );
+    Route::get( '/permissions/{id}/edit', 'Development\PermissionController@edit' )->name( 'development.permissions.edit' );
+    Route::post( '/permissions/{id}', 'Development\PermissionController@destroy' )->name( 'development.permissions.destroy' );
 
 });
 

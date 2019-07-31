@@ -5,7 +5,6 @@ namespace BBBController\Providers;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use BBBController\Configuration;
 use BBBController\Operations\Commands;
-use BBBController\Operations\SSH;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -64,12 +63,12 @@ class AppServiceProvider extends ServiceProvider
             'general_settings' => $general_settings
         ]]);
 
-        if(SSH::$instances == 0){
-            $ssh = new SSH();
-            if(SSH::serverAlive()){
-                $ssh->connect();
-            }
-        }
+//        if(SSH::$instances == 0){
+//            $ssh = new SSH();
+//            if(SSH::serverAlive()){
+//                $ssh->connect();
+//            }
+//        }
 
     }
 }

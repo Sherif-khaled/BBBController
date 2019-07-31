@@ -179,21 +179,25 @@ $(document).ready(function () {
 
 
     /* When click yes confirm will delete the selected user */
-    $('#yes_confirm').click(function (e) {
-        e.preventDefault()
-        let id = $('#delUser').data('id');
-        $.ajax({
-            type: "DELETE",
-            url:"/users/"+id,
-            success:function (data) {
-                toastr["success"]("User deleted successfully.", "success")
+    $('body').on('click', '#delUser', function () {
+        let id = $(this).data('id');
 
-                $('#confirm_modal').modal('hide');
-                $('#users_table').DataTable().destroy();
-                getUsers();
-            }
-        })
-    })
+        $('#yes_confirm').click(function (e) {
+            e.preventDefault()
+            $.ajax({
+                type: "DELETE",
+                url: "/users/" + id,
+                success: function (data) {
+                    if (data.hasOwnProperty('success')) {
+                        toastr["success"](data.success, "success")
+                    }
+                    $('#confirm_modal').modal('hide');
+                    $('#users_table').DataTable().destroy();
+                    getUsers();
+                }
+            })
+        });
+    });
 });
 
 /* get user datatable */

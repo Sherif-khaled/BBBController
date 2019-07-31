@@ -50,6 +50,7 @@
     <script src="{{ asset('assets/js/bbb_settings.js') }}"></script>
     <script src="{{ asset('assets/js/users.js') }}"></script>
     <script src="{{ asset('assets/js/settings.js') }}"></script>
+    <script src="{{ asset('assets/js/RolesAndPermissions.js') }}"></script>
     <script src="{{ asset('assets/js/helper.js') }}"></script>
     <script src="{{asset('assets/js/worker.js')}}"></script>
 

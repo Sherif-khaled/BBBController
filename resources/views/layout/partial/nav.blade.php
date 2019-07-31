@@ -79,6 +79,11 @@
                         <i class="ni ni-key-25 text-info"></i> General Settings
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('development.index')}}">
+                        <i class="fas fa-code text-info"></i> Development
+                    </a>
+                </li>
             </ul>
             <!-- Divider -->
             <hr class="my-3">
